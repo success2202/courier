@@ -13,6 +13,21 @@ return new class extends Migration
     {
         Schema::create('courier_infos', function (Blueprint $table) {
             $table->id();
+            $table->string('product')->nullable();
+            $table->string('weight')->nullable();
+            $table->string('amount')->nullable();
+            $table->string('size')->nullable();
+            $table->string('type')->nullable();
+            $table->string('sender_id')->nullable();
+            $table->string('reciever_id')->nullable();
+            $table->string('invoice_id')->nullable();
+            $table->string('pick_date')->nullable();
+            $table->string('departure_date')->nullable();
+            $table->string('origin')->nullable();
+            $table->string('destination')->nullable();
+            $table->string('mode')->nullable();
+            $table->string('qty')->nullable();
+            $table->string('frieght')->nullable();
             $table->timestamps();
         });
     }

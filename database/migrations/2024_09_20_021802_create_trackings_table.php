@@ -12,7 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('trackings', function (Blueprint $table) {
-            $table->id();
+            $table->id('courier_info_id')->nullable();
+            $table->string('const_no')->nullable();
+            $table->string('update_date')->nullable();
+            $table->string('current_city')->nullable();
+            $table->string('current_location')->nullable();
+            $table->string('arrival_time')->nullable();
+            $table->string('status')->nullable();
+            $table->string('lat')->nullable();
+            $table->string('long')->nullable();
+            $table->text('comment')->nullable();
             $table->timestamps();
         });
     }

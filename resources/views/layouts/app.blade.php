@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -7,30 +8,79 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link href="{{asset('/css/bootstrap.css')}}" rel="stylesheet">
+        <link href="{{asset('/css/style.css')}}" rel="stylesheet">
+        <link href="{{asset('/css/responsive.css')}}" rel="stylesheet">
+        <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+        <link rel="icon" href="{{asset('/images/favicon.png')}}" type="image/x-icon">
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('layouts.navigation')
+        <!-- Responsive -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white dark:bg-gray-800 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+        <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+        <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+        </head>
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
-    </body>
+<body class="hidden-bar-wrapper">
+
+@include('partials.nav')
+@yield('contents')
+@include('partials.footer')
+<!--End pagewrapper-->
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-up"></span></div>
+
+<script src="js/jquery.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/appear.js"></script>
+<script src="js/owl.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/script.js"></script>
+
+<script src="process/jquery.min.js"></script>
+	<script src="process/jquery.validate.js"></script>
+	
+<script>
+	$.validator.setDefaults({
+		submit: function() {
+			alert("submitted!");
+		}
+	});
+
+	$(document).ready(function() {
+		$("#userForm").validate({
+			rules: {
+				name: "required",
+				Consignment: {
+					required: true,
+					minlength: 13
+				},
+			   
+			},
+			messages: {
+				name: "Please enter your name",           
+				Consignment: {
+						required: "Please enter a valid tracking number...",
+						minlength: "Tracking ID must consist of at least 13 characters"
+				},           
+			}
+		});
+	});
+	
+	</script>
+	<script>
+	$(document).ready(function(){
+		$(".nav-tabs a").click(function(){
+			$(this).tab('show');
+		});
+	});
+	</script>
+</body>
+
 </html>
