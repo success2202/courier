@@ -1,86 +1,61 @@
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>{{ config('app.name', '') }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/plugins/bootstrap-3.3.6/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css"
+     href="{{asset('/assets/plugins/bootstrap-select-1.10.0/dist/css/bootstrap-select.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/plugins/font-awesome-4.6.1/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/plugins/font-elegant/elegant.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/plugins/owl.carousel.2/assets/owl.carousel.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/css/animate.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/css/theme.css')}}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+    <!--[if lt IE 9]>
+    <script src="assets/plugins/iesupport/html5shiv.js"></script>
+    <script src="assets/plugins/iesupport/respond.js"></script>
+    <![endif]-->
+</head>
+<body id="home">
+	{{-- <div id="preloader">
+		<div class="small1">
+			<div class="small ball smallball1"></div>
+			<div class="small ball smallball2"></div>
+			<div class="small ball smallball3"></div>
+			<div class="small ball smallball4"></div>
+		</div>
+		<div class="small2">
+			<div class="small ball smallball5"></div>
+			<div class="small ball smallball6"></div>
+			<div class="small ball smallball7"></div>
+			<div class="small ball smallball8"></div>
+		</div>
+		<div class="bigcon">
+			<div class="big ball"></div>
+		</div>
+	</div>	 --}}
+	       <!-- Main Wrapper -->        
+		   <main class="wrapper">
 
-        <link href="{{asset('/css/bootstrap.css')}}" rel="stylesheet">
-        <link href="{{asset('/css/style.css')}}" rel="stylesheet">
-        <link href="{{asset('/css/responsive.css')}}" rel="stylesheet">
-        <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-        <link rel="icon" href="{{asset('/images/favicon.png')}}" type="image/x-icon">
+            <!-- Header -->
 
-        <!-- Responsive -->
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    @include('layouts.nav')
+    @yield('contents')
+    @include('layouts.footer')
+   
 
-        <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
-        <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
-        </head>
-
-<body class="hidden-bar-wrapper">
-
-@include('partials.nav')
-@yield('contents')
-@include('partials.footer')
-<!--End pagewrapper-->
-
-<!--Scroll to top-->
-<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-up"></span></div>
-
-<script src="js/jquery.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="js/jquery.fancybox.js"></script>
-<script src="js/appear.js"></script>
-<script src="js/owl.js"></script>
-<script src="js/wow.js"></script>
-<script src="js/jquery-ui.js"></script>
-<script src="js/script.js"></script>
-
-<script src="process/jquery.min.js"></script>
-	<script src="process/jquery.validate.js"></script>
-	
-<script>
-	$.validator.setDefaults({
-		submit: function() {
-			alert("submitted!");
-		}
-	});
-
-	$(document).ready(function() {
-		$("#userForm").validate({
-			rules: {
-				name: "required",
-				Consignment: {
-					required: true,
-					minlength: 13
-				},
-			   
-			},
-			messages: {
-				name: "Please enter your name",           
-				Consignment: {
-						required: "Please enter a valid tracking number...",
-						minlength: "Tracking ID must consist of at least 13 characters"
-				},           
-			}
-		});
-	});
-	
-	</script>
-	<script>
-	$(document).ready(function(){
-		$(".nav-tabs a").click(function(){
-			$(this).tab('show');
-		});
-	});
-	</script>
-</body>
-
-</html>
+	<script src="{{asset('/assets/js/jquery-2.2.4.min.js')}}" type="text/javascript"></script>        
+	<script src="{{asset('/assets/plugins/bootstrap-3.3.6/js/bootstrap.min.js')}}" type="text/javascript"></script>    
+	<script src="{{asset('/assets/plugins/bootstrap-select-1.10.0/dist/js/bootstrap-select.min.js')}}" type="text/javascript"></script>    
+	<script src="{{asset('/assets/plugins/owl.carousel.2/owl.carousel.min.js')}}" type="text/javascript"></script>   
+	<script src="{{asset('/assets/js/jquery.sticky.js')}}"></script>
+	<script src="{{asset('/assets/plugins/WOW-master/dist/wow.min.js')}}" type="text/javascript"></script>
+	<script src="{{asset('/assets/plugins/data.binder.js/data.binder.js')}}" type="text/javascript"></script>
+	<script src="{{asset('/assets/js/theme.js')}}" type="text/javascript"></script>
+	</body>
+	</html>
