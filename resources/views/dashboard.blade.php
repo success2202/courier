@@ -5,17 +5,25 @@
             <!-- Content Wrapper -->
             <article> 
                 <!-- Banner -->
-                <section class="banner mask-overlay pad-120 white-clr">
+                <section class="banner mask-overlay pad-120 white-clr" style="background: url({{asset('images/'.$sliders[0]->image)}}); background-repeat:no-repeat; background-size:cover" >
+                    @forelse($sliders as $slider)
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
                     <div class="container theme-container rel-div">
-                        <img class="pt-10 effect animated fadeInLeft" alt="" src="assets/img/icons/icon-1.png" />
+                        <img class="pt-10 effect animated fadeInLeft" alt="" src="{{$slider->image}}" />
                         <ul class="list-items fw-600 effect animated wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s">   
                             <li><a href="#">fast</a></li>
                             <li><a href="#">secured</a></li>
                             <li><a href="#">worldwide</a></li>
                         </ul>
-                        <h2 class="section-title fs-48 effect animated wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s"> awesome template for <br> <span class="theme-clr"> courier </span> & <span class="theme-clr"> delivery </span> services </h2>
+                        <h2 class="section-title fs-48 effect animated wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s"> {{$slider->title}} <br>
+                             <span class="theme-clr"> {{$slider->content}} </span> </h2>
                     </div>
                     <div class="pad-50 visible-lg"></div>
+                        </div>
+                    </div>
+                    @empty 
+                    @endforelse
                 </section>
                 <!-- /.Banner -->
 

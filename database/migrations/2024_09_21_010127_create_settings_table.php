@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Setting;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,7 +15,7 @@ return new class extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
             $table->string('site_name')->nullable();
-            $table->string('site_logo')->nullable();
+            $table->string('logo')->nullable();
             $table->string('site_phone')->nullable();
             $table->string('site_email')->nullable();
             $table->string('site_copyright')->nullable();
@@ -25,12 +26,18 @@ return new class extends Migration
             $table->string('linkedIn')->nullable();
             $table->string('instagram')->nullable();
             $table->string('address')->nullable();
+            $table->string('about')->nullable();
             $table->string('fav')->default('favicon.png');
             $table->string('city')->nullable();
             $table->string('state')->nullable();
             $table->string('country')->nullable();
             $table->timestamps();
         });
+
+        Setting::create([
+            'logo' => 'logo.png',
+            'site_name' => 'CGG Courier Services'
+        ]);
     }
 
     /**
