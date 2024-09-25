@@ -9,10 +9,6 @@
                         <div class="d-flex align-items-center">
                             <h5 class="mb-0">
                                 <a href="#" class="link-2">{{$page->title}}</a> 
-                              @if($page->status == 1)  <span class="badge badge-success ml-2">Active</span>
-                              @else 
-                              <span class="badge badge-secondary ml-2">In-active</span>
-                              @endif
                             </h5>
 
                             <div class="dropdown ml-auto">
@@ -24,12 +20,6 @@
                                 <div class="dropdown-menu dropdown-menu-right">
                                     
                                     <a href="{{route('admin.PagesEdit', encrypt($page->id))}}" class="dropdown-item">Edit</a>
-                                    @if($page->is_active == 1) 
-                                    <a  onclick="return confirm('Are you sure?')" href="{{route('admin.PagesDisable', encrypt($page->id))}}" class="dropdown-item">Disabled</a>
-
-                                    @else
-                                    <a  onclick="return confirm('Are you sure?')" href="{{route('admin.PagesActivate', encrypt($page->id))}}" class="dropdown-item">Activate</a>
-                                    @endif
                                     <a  onclick="return confirm('Are you sure?')" href="{{route('admin.PagesDelete', encrypt($page->id))}}" class="dropdown-item text-danger">Delete</a>
                                 </div>
                             </div>
@@ -39,7 +29,6 @@
                             <div class="progress-bar bg-primary"></div>
                             
                         </div>
-                       <span style="font-weight:bold" class="p-2"> {{$page->Menu? $page->Menu->name : $page->subMenu->name }}</span>
                      
                         <p>{!! substr($page->contents,0,200) !!}.</p>
                         <div class="row">
@@ -58,12 +47,11 @@
                         <div class="small mb-2"></div>
                         <div class="avatar-group">
                             <figure class="avatar avatar-sm">
-                                <img src="{{asset('images/'.$page->metas)}}" > 
+                                <img src="{{asset('images/'.$page->images)}}" > 
                             </figure>
                            
                         </div>
                         <div style="float: right;">
-                            @if($page->id == 33)   <a href="{{route('admin.form.index')}}"> View School Applications</a> @endif
                         </div>
                     </div>
                 </div>

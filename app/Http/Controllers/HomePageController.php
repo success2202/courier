@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Services;
 use App\Models\Slider;
 use App\Models\Testimonial;
@@ -15,7 +16,7 @@ class HomePageController extends Controller
     {
         $data['sliders'] = Slider::latest()->get();
         $data['services'] = Services::latest()->get();
-        $data['testimonial'] = Testimonial::latest()->get();
+        $data['blogs'] = Blog::latest()->get();
         return view('dashboard', $data);
     }
 

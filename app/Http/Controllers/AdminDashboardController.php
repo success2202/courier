@@ -10,7 +10,7 @@ class AdminDashboardController extends Controller
 {
     //
     public function Index(){
-        return view('manage.index', [
+        return view('admin.index', [
             'courier' => CourierInfo::get(),
         ])
         ->with('bheading', 'Index')

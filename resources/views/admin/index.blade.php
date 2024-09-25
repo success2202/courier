@@ -63,32 +63,7 @@
             </div>
             
         </div>
-        <div class="col-md-5">
-            <div class="card">
-                <div class="card-body">
-                    <h6 class="card-title">Recent Job Applicants</h6>
-                    <ul class="list-group list-group-flush">
-                        {{-- @forelse ($applicants as $appl) --}}
-                        <li class="list-group-item d-flex align-items-center p-l-r-0">
-                            
-                            <div>
-                                {{-- <h6 class="m-b-0">{{$appl->name}}</h6>
-                                <small class="text-muted">{{$appl->email}}</small> <br>
-                                <small class="text-muted">{{$appl->CientJobs->title}}</small> --}}
-                            </div>
-                            <div class="ml-auto">
-                                <span class="badge  mr-2 d-sm-inline d-none">{{$appl->created_at->diffForHumans()}}</span>
-                                
-                            </div>
-                        </li> 
-                        {{-- @empty
-                            
-                        @endforelse --}}
-                    
-                    </ul>
-                </div>
-            </div>
-        </div>
+     
     </div>
 
     <div class="row">

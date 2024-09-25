@@ -10,6 +10,6 @@ class Services extends Model
     use HasFactory;
     protected $table = "services";
     protected $fillable = [
-        'sub_menu_id', 'title', 'contents', 'metas', 'links', 'slug', 'menu_id', 'status'
+    'title', 'contents', 'images'
     ];
 }

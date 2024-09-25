@@ -40,7 +40,7 @@
 
 
                                           <div class="col-md-6 pt-4">
-                                            <img src="{{asset('images/'.$page->metas)}}" width="100px">
+                                            <img src="{{asset('images/'.$page->images)}}" width="100px">
                                               <div class="custom-file">
                                             <input type="file" name="image" class="custom-file-input  @error('image') is-invalid @enderror">
                                                 <label class="custom-file-label" for="customFile">Choose Page Cover Image</label>
