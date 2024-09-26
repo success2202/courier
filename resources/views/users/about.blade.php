@@ -1,85 +1,103 @@
 @extends('layouts.app')
 @section('contents')
 
-
-	<!--Page Title-->
-    <section class="page-title" style="background-image:url(images/background/12.jpg)">
-    	<div class="auto-container">
-        	<h2>About Us</h2>
-			<div class="separater"></div>
-        </div>
-    </section>
-	
-	 <!--Breadcrumb-->
-    <div class="breadcrumb-outer">
-    	<div class="auto-container">
-        	<ul class="bread-crumb text-center">
-            	<li><a href="index.html">Home</a> <span>/</span></li>
-                <li>About Us</li>
-            </ul>
-        </div>
-    </div>
-    <!--End Page Title-->
-	
-	<!-- Welcome Section -->
-	<section class="welcome-section">
-		<div class="auto-container">
-			<div class="row clearfix">
-				
-				<!-- Content Column -->
-				<div class="content-column col-lg-6 col-md-12 col-sm-12">
-					<div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-						<div class="sec-title-two sec-title">
-							<h2>VANGUSEM<span> Agencia Despachante</span></h2>
-							<div class="separater"></div>
-						</div>
-						<ul class="list-style-one">
-							<li><span>MISION: </span>Facilitar y mejorar de manera constante   las operaciones de Comercio Internacional, efectuar el control minucioso de las mercancías, brindar una atención integrada y puntual a las empresas, brindando siempre un servicio especializado,  personalizado, transparente permitiéndonos  forjar una relación comercial excelente.</li>
-							<li><span>VISION: </span>Ser una Agencia Despachante  importante a nivel  Internacional,  que responde a las exigencias del Comercio Internacional  con una excelente y efectiva atención a las Empresas, integrando con  otros actores vinculados a las operaciones aduaneras,  bajo estándares  Internacionales, además de buscar innovación constante que faciliten  el Comercio Internacional.</li>
-							
-						</ul>
-						
+  <!-- Content Wrapper -->
+  <article class="about-page"> 
+	<!-- Breadcrumb -->
+	<section class="theme-breadcrumb pad-50">                
+		<div class="theme-container container ">  
+			<div class="row">
+				<div class="col-sm-8 pull-left">
+					<div class="title-wrap">
+						<h2 class="section-title no-margin" > About<span style="border-bottom: 2px solid #b7a30d"> us </span></h2>
+						<p class="fs-16 no-margin"></p>
 					</div>
 				</div>
-				
-				<!-- Image Column -->
-				<div class="image-column col-lg-6 col-md-12 col-sm-12">
-					<div class="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-						<div class="image">
-							<img src="images/resource/welcome.jpg" alt="">
-						</div>
-					</div>
-				</div>
-				
+				<div class="col-sm-4">                        
+					<ol class="breadcrumb-menubar list-inline">
+						<li><a href="#" class="gray-clr">Home</a></li>                                   
+						<li class="active">About</li>
+					</ol>
+				</div>  
 			</div>
 		</div>
 	</section>
-	<!-- End Welcome Section -->
-		
-	
-	<!--Sponsors Section-->
-	<section class="sponsors-section">
-		<div class="auto-container">
-			
-			<div class="carousel-outer">
-                <!--Sponsors Slider-->
-                <ul class="sponsors-carousel owl-carousel owl-theme">
-                    <li><div class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/3.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/4.png" alt=""></a></div></li>
-					<li><div class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/3.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/4.png" alt=""></a></div></li>
-                </ul>
-            </div>
-			
+	<!-- /.Breadcrumb -->
+
+	<!-- About Us -->
+	<section class="pad-50 about-wrap">
+		<span class="bg-text">  </span>
+		<div class="theme-container container">               
+			<div class="row">
+				<div class="col-md-6">
+					<div class="about-us pt-10">
+						<p class="fs-16 wow fadeInUp" data-wow-offset="50" data-wow-delay=".25s">
+							{{$settings->site_name}} provides a portfolio of full logistic solutions in {{$settings->country}} which includes, but not limited to International and Domestic express delivery, Freight Forwarding, Integrated Logistics Solutions, Information and Document Management Solutions, Warehousing, Packaging Services.
+						</p>
+						<ul class="feature">
+							<li> 
+								<img alt="" src="" class="wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s" /> 
+								<div class="feature-content wow rotateInDownRight" data-wow-offset="50" data-wow-delay=".30s"> 
+									<p>{{$settings->site_name}} is a homegrown {{$settings->country}} logistics and distribution services company, founded in 2019. We are the among largest courier company in {{$settings->country}} and intend to become –in the near future– the go-to courier company in the continent</p>                                            
+								</div>  
+							</li>
+							<li> 
+								<img alt="" src="" class="wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s" /> 
+								<div class="feature-content wow rotateInDownRight" data-wow-offset="50" data-wow-delay=".30s"> 
+									
+									<p>We offer a wide array of express, courier and logistic support solutions aimed at helping customers re-engineer and re-invent their businesses to compete successfully in an ever-changing marketplace, with the final objective of safely and promptly delivering all our customers consignments as expected</p>                                            
+								</div>  
+							</li>
+							<li> 
+								<img alt="" src="" class="wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s" /> 
+								<div class="feature-content wow rotateInDownRight" data-wow-offset="50" data-wow-delay=".30s"> 
+									
+									<p>With staff strength of over 300 highly skilled personnel, we have excellent competencies in striving sectors such as Financial Services, Manufacturing, Telecommunications, Government Agencies, and Oil & Gas/Utilities</p>                                            
+								</div>  
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-6 text-center">                                
+					<img alt="" src="assets/img/block/about-img.png" class="effect animated fadeInRight" />
+				</div>
+			</div>
 		</div>
 	</section>
-	<!--End Sponsors Section-->
-	
+	<!-- /.About Us -->
+
+	<!-- More About Us -->
+	<section class="pad-30 more-about-wrap">
+		<div class="theme-container container pb-100">               
+			<div class="row">
+				<div class="col-md-4 col-sm-4 wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s">
+					<div class="more-about clrbg-before">
+						<h2 class="title-1">what we do</h2>
+						<div class="pad-10"></div>
+						<p>We are led by a team of first-rate managers—experts in their fields—who are given the freedom and authority to run their operations the way they know best. From top to bottom, we have assembled an elite team of employees, with numerous years of experience in the courier, freight and warehousing industries.</p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 wow fadeInUp" data-wow-offset="50" data-wow-delay=".30s">
+					<div class="more-about clrbg-before">
+						<h2 class="title-1">Our History</h2>
+						<div class="pad-10"></div>
+						<p> 
+							CGG Courier Services is a homegrown logistics and distribution services company, founded in 2019. We are the among largest courier company in and intend to become –in the near future– the go-to courier company in the continent</p>
+					</div>
+				</div>
+				<div class="col-md-4  col-sm-4 wow fadeInUp" data-wow-offset="50" data-wow-delay=".40s">
+					<div class="more-about clrbg-before">
+						<h2 class="title-1">our mission</h2>
+						<div class="pad-10"></div>
+						<p>To create transportation solutions, build logistics partnerships, and drive value - one delivery at a time.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /.More About Us -->
+</article>
+<!-- /.Content Wrapper -->
+
 	
 @endsection

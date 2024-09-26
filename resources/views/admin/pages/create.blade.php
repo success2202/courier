@@ -20,6 +20,17 @@
                                             @enderror
                                         </div>
                                     </div>
+
+                                    <div class="col-md-12">
+                                      <div class="form-group">
+                                        <input class="@error('brief') is-invalid @enderror" name="brief" value="{{old('brief')}}">
+                                         <small id="emailHelp" class="form-text text-muted">Page Summary
+                                                </small>
+                                                @error('brief')
+                                                <span class="invalid-feedback"> <small> *</small> </span>
+                                                @enderror
+                                        </div>
+                                             </div>
                                         
                                          <div class="col-md-12">
                                   <div class="form-group">

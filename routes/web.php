@@ -85,6 +85,10 @@ Route::controller(HomePageController::class)->group(function ()
 {
     Route::get('/', 'Index')->name('users.index');
     Route::get('/about-us', 'AboutUs')->name('users.about-us');
+    Route::get('/contact-us', 'ContactUs')->name('users.contact-us');
+    Route::get('/services/{service}', 'Services')->name('users.services');
+    Route::get('/blogs', 'BlogIndex')->name('users.blogs');
+    Route::get('/blog-details/{id}', 'BlogDetails')->name('users.blog.details');
 });
 
 

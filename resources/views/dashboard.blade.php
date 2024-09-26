@@ -59,10 +59,10 @@
                             @forelse($services as $service)
                             <div class="col-md-3">
                                 <div class="about-us pt-3">
-                                    <img src="{{asset('images/'.$service->images)}}" alt="" style="width: 200px; height:100px">
+                                    <img src="{{asset('images/'.$service->images)}}" alt="" style="width: 200px; height:130px">
                                     <h5 class="sectiitle pb-5 wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s" style="font-size: 20px; color:#000000"> {{$service->title}} </h5>
                                     <p class="fs-16 wow fadeInUp " data-wow-offset="50" data-wow-delay=".25s" style="color:#000000a4; text-align:justify">
-                                   {!! $service->contents !!} </p>
+                                   {!! $service->brief !!} <a href="{{route('users.services', encrypt($service->id))}}" class="btn btn-warning"> Learn More</a> </p>
                                 </div>
                              
                             </div>
@@ -151,7 +151,7 @@
                 <!-- /.Steps -->
 
                 <!-- Product Delivery -->
-                <section class="prod-delivery pad-120">
+                <section class="prod-delivery pad-50">
                     <div class="theme-container container">               
                         <div class="row">
                             <div class="col-md-11 col-md-offset-1">
@@ -170,22 +170,20 @@
                         </div>
                     </div>
                 </section>
-                <!-- /.Product Delivery -->
-
                 <section class="pad-80 about-wrap clrbg-before">
                     <span class="bg-text wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s"> </span>
                     <div class="theme-container container">               
                         <div class="row">
                           
-                            <h3 class="" style="color:#00000086; font-size:24px; border-bottom:2px solid #00000025" >Our Blogs</h3>
+                            <h3 class="pb-5" style="color:#00000086; font-size:24px; border-bottom:2px solid #00000025" >Our Blogs</h3>
                             @forelse($blogs as $blog)
                             <div class="col-md-4">
                                 <div class="about-us pt-3">
-                                    <a href="">
+                                    <a href="{{route('users.blog.details', encrypt($blog->id))}}">
                                     <img src="{{asset('images/'.$blog->image)}}" alt="" style="width: 300px; height:150px">
                                     <h5 class="sectiitle pb-5 wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s" style="font-size: 20px; color:#000000"> {{$blog->title}} </h5>
                                     <p class="fs-16 wow fadeInUp " data-wow-offset="50" data-wow-delay=".25s" style="color:#000000a4; text-align:justify">
-                                   {!! substr($service->contents,0,100) !!}   <span style="color:blue">Read more... </span> </p>
+                                   {!! substr($service->contents,0,100) !!}   <span style="color:blue"> Read more... </span> </p>
                                 </a>
                                 </div>
                              
@@ -198,6 +196,5 @@
                 </section>
 
             </article>
-            <!-- /.Content Wrapper -->
 
 @endsection

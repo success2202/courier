@@ -25,27 +25,26 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-logo" href="#"> <img src="{{asset('/logo.png')}}" alt="logo"  width="130px"/> </a>
+                    <a class="navbar-logo" href="{{route('users.index')}}"> <img src="{{asset('/logo.png')}}" alt="logo"  width="130px"/> </a>
                 </div>
                 <div class="col-md-10 col-sm-10 fs-12">
                     <div id="navbar" class="collapse navbar-collapse no-pad">
                         <ul class="navbar-nav theme-menu">
                             <li class="dropdown active">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" >Home </a>
+                                <a href="{{route('users.index')}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" >Home </a>
                             </li>
-                            <li> <a href="about-us.html">About Us</a> </li>
+                            <li> <a href="{{route('users.about-us')}}">About Us</a> </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" >Services</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="blog.html">Courier Services</a></li>
-                                    <li><a href="blog-left.html">Parcel Distribution</a></li>
-                                    <li><a href="single-blog.html">Warehousing</a></li>    
-                                    <li><a href="single-blog.html">Logistics</a></li>    
-                                    <li><a href="single-blog.html">Freight Services</a></li>                                  
+                                    @forelse($site_services as $servie)
+                                    <li><a href="{{route('users.services', encrypt($servie->id))}}">{{$servie->title}}</a></li>
+                                    @empty 
+                                    @endforelse                               
                                 </ul>
                             </li>
-                            <li> <a href="contact-us.html"> Contact Us </a> </li>
-                            <li> <a href="contact-us.html"> Blogs</a> </li>
+                            <li> <a href="{{route('users.about-us')}}"> Contact Us </a> </li>
+                            <li> <a href="{{route('users.blogs')}}"> Blogs</a> </li>
                         </ul>                                                      
                     </div>
                 </div>
