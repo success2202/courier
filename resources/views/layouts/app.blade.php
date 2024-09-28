@@ -57,5 +57,7 @@
 	<script src="{{asset('/assets/plugins/WOW-master/dist/wow.min.js')}}" type="text/javascript"></script>
 	<script src="{{asset('/assets/plugins/data.binder.js/data.binder.js')}}" type="text/javascript"></script>
 	<script src="{{asset('/assets/js/theme.js')}}" type="text/javascript"></script>
+
+	@yield('script')
 	</body>
 	</html>

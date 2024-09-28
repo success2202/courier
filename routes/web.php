@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminCourierController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CourierController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\ManagePagesController;
 use App\Http\Controllers\MenuPage;
@@ -82,11 +83,16 @@ Route::group(['prefix' => 'manage', 'as' => 'admin.'], function(){
     Route::get('/courier/index', 'CourierIndex')->name('courier.index');
     Route::get('/courier/create', 'createCourierInfo')->name('courier.create');
     Route::post('courier/store', 'CourierStore')->name('courier.store');
-    Route::get('/tracking/create', 'Tracking')->name('courier.tracking');
-    Route::get('/tracking/store', 'TrackingStore')->name('tracking.store');
+    Route::get('courier/edit/{id}', 'CourierEdit')->name('courier.edit');
+    Route::post('courier/update/{id}', 'CourierUpdate')->name('courier.update');
+    Route::get('/tracking/create/{id}', 'Tracking')->name('courier.tracking');
+    Route::post('/tracking/store', 'TrackingStore')->name('tracking.store');
+    Route::get('/courier/index', 'Index')->name('courier.index');
+    Route::get('/courier/tracking/details/{id}', 'TrackingDetails')->name('courier.tracking.details');
+    // Route::get('/courier/tracking/edit/{id}', 'TrackingEdit')->name('courier.tracking.edit');
+    Route::post('/courier/tracking/update/{id}', 'UpdateTracking')->name('tracking.update');
 
     });
-
 });
 });
 
@@ -102,6 +108,10 @@ Route::controller(HomePageController::class)->group(function ()
     Route::get('/blog-details/{id}', 'BlogDetails')->name('users.blog.details');
 });
 
+Route::controller(CourierController::class)->group(function() 
+{
+    Route::post('/courier/tracking', 'Index')->name('users.courier.index');
+});
 
 
 

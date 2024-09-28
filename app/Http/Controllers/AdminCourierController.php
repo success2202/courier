@@ -64,10 +64,11 @@ class AdminCourierController extends Controller
         return back();
     }
 
-    public function Tracking()
+    public function Tracking($id)
     {
+        
         return view('admin.courier.tracking')
-            ->with('courier', CourierInfo::latest()->get())
+            ->with('courier', CourierInfo::where('id', decrypt($id))->first())
             ->with('bheading', 'Create Tracking Info')
             ->with('breadcrumb', 'Create Tracking Info');
     }
@@ -77,7 +78,7 @@ class AdminCourierController extends Controller
 
       $tracking =  Tracking::create([
             'courier_info_id' => $req->courier_info_id,
-            'const_no' => rand(111111111111,9999999999),
+            'const_no' => 'CGG-'.rand(111111111,99999999),
             'update_date'=> $req->update_date,
             'current_city'=> $req->current_city,
             'current_location'=> $req->current_location,
@@ -96,5 +97,93 @@ class AdminCourierController extends Controller
         Session::flash('alert', 'error');
         Session::flash('message', 'Something  went wrong');
         return back();
+    }
+
+    public function Index()
+    {
+        return view('admin.courier.index')
+        ->with('courier', CourierInfo::latest()->get())
+        ->with('bheading', 'courier')
+        ->with('breadcrumb', 'courier');
+    }
+
+    public function TrackingDetails($id)
+    {
+        $track = Tracking::where('courier_info_id', decrypt($id))->first();
+        if(!$track)
+        { 
+            Session::flash('alert', 'error');
+            Session::flash('message', 'You dont have Tracking information for this courier');
+            return back();
+
+        }
+        return view('admin.courier.tracking_details')
+        ->with('tracking', $track)
+        ->with('courier', CourierInfo::where('id', decrypt($id))->first())
+        ->with('bheading', 'tracking details')
+        ->with('breadcrumb', 'tracking details');
+    }
+
+    public function UpdateTracking(Request $request, $id)
+    {
+        $track = Tracking::where('id', decrypt($id))->first();
+        if($track)
+        { 
+            $track->fill($request->all())->save();
+        }
+        Session::flash('alert', 'success');
+        Session::flash('message','Tracking Info updated successfully');
+        return back();
+    }
+
+    public function CourierEdit($id)
+    {
+        return view('admin.courier.edit')
+        ->with('courier', CourierInfo::where('id', decrypt($id))->first())
+        ->with('bheading', 'courier Edit')
+        ->with('breadcrumb', 'courier Edit');
+    }
+
+    public function CourierUpdate(Request $req, $id)
+    {
+        if ($req->images) {
+            $images = [];
+            foreach ($req->images as $image) {
+                $fileName = $image->getClientOriginalName();
+                $image->move('images', $fileName);
+                $images[] = $fileName;
+            }
+        }
+        $courier = CourierInfo::where('id', decrypt($id))->first();
+        if($courier)
+        {
+            $courier->product = $req->product;      
+            $courier->images = isset($images)?json_encode($images):'';
+            $courier->weight  = $req->weight;
+            $courier->amount = $req->amount;
+            $courier->size = $req->size;
+            $courier->type = $req->type;
+            $courier->sender_name = $req->sender_name;
+            $courier->sender_email = $req->sender_email;
+            $courier->sender_phone = $req->sender_phone;
+            $courier->sender_address = $req->sender_address;
+            $courier->receiver_name = $req->receiver_name;
+            $courier->receiver_email = $req->receiver_email;
+            $courier->receiver_phone = $req->receiver_phone;
+            $courier->receiver_address = $req->receiver_address;
+            $courier->pick_date = $req->pick_date;
+            $courier->departure_date = $req->departure_date;
+            $courier->origin = $req->origin;
+            $courier->destination = $req->destination;
+            $courier->mode = $req->mode;
+            $courier->qty = $req->qty;
+            $courier->frieght = $req->frieght;
+            $courier->save();
+            Session::flash('alert', 'success');
+            Session::flash('message', 'Courier Informaiton added successfully');
+            return back();
+        }
+        return back();
+    
     }
 }

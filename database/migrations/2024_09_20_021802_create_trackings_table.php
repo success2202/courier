@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('trackings', function (Blueprint $table) {
-            $table->id('courier_info_id')->nullable();
+            $table->id('id')->nullable();
+            $table->integer('courier_info_id')->nullable();
             $table->string('const_no')->nullable();
             $table->string('update_date')->nullable();
             $table->string('current_city')->nullable();

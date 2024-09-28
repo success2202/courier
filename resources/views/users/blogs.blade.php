@@ -38,11 +38,11 @@
                             <a class="title-1" href="{{route('users.blog.details', encrypt($blog->id))}}">{{$blog->title}}</a>
                             <div class="pad-10">
                             </div>
-                            <p>{!! substr($blog->contents,0,200) !!}.. <span style="color:blue">        <a class="title-1" href="{{route('users.blog.details', encrypt($blog->id))}}">Read More</a></span></p>
+                            <p>{!! substr($blog->contents,0,200) !!}.. <span style="color:blue">        <a class="title-1" href="{{route('users.blog.details', encrypt($blog->id))}}"></a></span></p>
                         </div>
                         <div class="post-footer">
                             <span class="post-readmore">
-                                <a class="font2-title1 fs-12" href="{{route('users.blog.details', encrypt($blog->id))}}">Read more <span class="arrow_right fs-20"></span> </a>
+                                <a class="font2-title1 fs-" href="{{route('users.blog.details', encrypt($blog->id))}}">Read more <span class="arrow_right fs-20"></span> </a>
                             </span>
                         </div>
                     </article>
