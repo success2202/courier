@@ -3,12 +3,12 @@
     <div class="top-bar font2-title1 white-clr">
         <div class="theme-container container">
             <div class="row">
-                <div class="col-md-6 col-sm-5">
+                <div class="col-md-4 col-sm-5">
                     <ul class="list-items fs-10">
                         <li class="active"><a href="#">Privacy</a></li>
                     </ul>
                 </div>
-                <div class="col-md-6 col-sm-7 fs-12">
+                <div class="col-md-8 col-sm-7 fs-12">
                     <p class="contact-num">  <i class="fa fa-phone"></i> Call us now: <span class="theme-clr"> {{$settings->site_phone}}</span>  &nbsp; &nbsp; <i class="fa fa-envelope"></i>  Email: <span class="theme-clr"> {{$settings->site_email}}</span> </p>
                 </div>
             </div>
