@@ -8,7 +8,7 @@
            <i class="fa fa-home"></i> &nbsp;Dashboard</a>
         </li>
 
-        <li class="navigation-divider" style="margin: 0px; padding:20px 0px 0px 30px">Courier__</li>
+        <li class="navigation-divider" style="margin: 0px; padding:20px 0px 0px 30px">Courier</li>
         <li>
         <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Pages"
         data-nav-target="#dashboards">
@@ -20,7 +20,7 @@
        </ul>
       </li>
 
-        <li class="navigation-divider" style="margin: 0px; padding:20px 0px 0px 30px">Services___</li>
+        <li class="navigation-divider" style="margin: 0px; padding:20px 0px 0px 30px">Services</li>
                <li>
                <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Pages"
                data-nav-target="#dashboards">
@@ -32,7 +32,7 @@
               </ul>
         </li>
      
-        <li class="navigation-divider" style="margin: 0px; padding:20px 0px 0px 30px">Blogs__</li>
+        <li class="navigation-divider" style="margin: 0px; padding:20px 0px 0px 30px">Blogs</li>
          <li>
             <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Blogs"
                data-nav-target="#dashboards">
@@ -45,7 +45,7 @@
         
         
         
-        <li class="navigation-divider" style="margin: 0px; padding:20px 0px 0px 30px">Settings__</li>
+        <li class="navigation-divider" style="margin: 0px; padding:20px 0px 0px 30px">Settings</li>
         <li>
             <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Settings"
                data-nav-target="#dashboards">
