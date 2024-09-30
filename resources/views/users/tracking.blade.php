@@ -145,7 +145,7 @@
                  </div>
                  <div class="col-md-3 pad-0 wow">
             <div class="card">
-                <div class="card-body bg-info pl-5"  style="width: 400px">
+                <div class="card-body bg-info pl-5"  style="width: 500px">
                    <p class="text-25"> Please input a correct tracking code to get tracking information</p> 
                 </div>
             </div>
