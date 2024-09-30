@@ -32,12 +32,12 @@
                         <li class="wow fadeIn" data-wow-offset="50" data-wow-delay=".30s"> <a href="{{$settings->instagram}}" class="fa fa-instagram"></a> </li>
                         <li class="wow fadeIn" data-wow-offset="50" data-wow-delay=".35s"> <a href="{{$settings->linkedin}}" class="fa fa-linkedin"></a> </li>
                     </ul>
-                    <ul class="payment-icons list-inline">
+                    {{-- <ul class="payment-icons list-inline">
                         <li class="wow fadeIn" data-wow-offset="50" data-wow-delay=".20s"> <a href="#"> <img alt="#" src="assets/img/icons/payment-1.png" /> </a> </li>
                         <li class="wow fadeIn" data-wow-offset="50" data-wow-delay=".25s"> <a href="#"> <img alt="#" src="assets/img/icons/payment-2.png" /> </a> </li>
                         <li class="wow fadeIn" data-wow-offset="50" data-wow-delay=".30s"> <a href="#"> <img alt="#" src="assets/img/icons/payment-3.png" /> </a> </li>
                         <li class="wow fadeIn" data-wow-offset="50" data-wow-delay=".35s"> <a href="#"> <img alt="#" src="assets/img/icons/payment-4.png" /> </a> </li>
-                    </ul>
+                    </ul> --}}
                 </div>
             </div>
         </div>
