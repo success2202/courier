@@ -31,7 +31,7 @@
                     <div id="navbar" class="collapse navbar-collapse no-pad">
                         <ul class="navbar-nav theme-menu">
                             <li class="dropdown active">
-                                <a href="{{route('users.index')}}">Home </a>
+                                <a href="{{route('users.index')}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" >Home </a>
                             </li>
                             <li> <a href="{{route('users.about-us')}}">About Us</a> </li>
                             <li class="dropdown">
@@ -45,7 +45,7 @@
                             </li>
                             <li> <a href="{{route('users.about-us')}}"> Contact Us </a> </li>
                             <li> <a href="{{route('users.blogs')}}"> Blogs</a> </li>
-                            <li>  </li>
+                            <li> </li>
                         </ul>                                                      
                     </div>
                 </div>
