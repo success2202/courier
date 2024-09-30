@@ -13,7 +13,7 @@
                             
                         </div>
                         <div class="col-md-5">
-                            <img src="{{asset('assets/'.$settings->site_logo)}}" alt="..." class="img-fluid">
+                            <img src="{{asset('assets/'.$settings->logo)}}" alt="..." class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
      
     </div>
 </div>
-<div style="height:500px">
-    
+<div style="height:400px">
+
 </div>
 @endsection
