@@ -6,6 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', '') }}</title>
     <meta charset="UTF-8">
+	<link rel="shortcut icon" href="{{asset('/images/fav.png')}}" type="image/x-icon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{asset('/assets/plugins/bootstrap-3.3.6/css/bootstrap.min.css')}}">
     <link rel="stylesheet" type="text/css"
