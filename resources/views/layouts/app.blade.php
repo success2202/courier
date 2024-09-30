@@ -20,7 +20,7 @@
 
     <title>{{ config('app.name', 'Cggcourier') }}</title>
     <meta charset="UTF-8">
-	<link rel="shortcut icon" href="{{asset('/images/fav.png')}}" type="image/x-icon"/>
+	<link rel="shortcut icon" href="{{asset('/images/icons.png')}}" type="image/x-icon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{asset('/assets/plugins/bootstrap-3.3.6/css/bootstrap.min.css')}}">
     <link rel="stylesheet" type="text/css"
