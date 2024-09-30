@@ -18,7 +18,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card">
+            {{-- <div class="card">
                 <div class="card-body">
                     <h6 class="card-title d-flex justify-content-between">
                         <span>Admin Last Login</span>
@@ -36,7 +36,6 @@
                             </tr>
                             </thead>
                             <tbody>
-                            {{-- @forelse ($logins as $login) --}}
                             <tr>
                                 <td> 
                                     @php $details = json_decode(file_get_contents("http://ipinfo.io/$login->login_ip/json"));
@@ -46,17 +45,12 @@
                                 <td class="text-center">{{$login->login_ip}}</td>
                                 <td class="text-center text-success">{{$login->created_at}}</td> 
                             </tr>
-
-                                
-                            {{-- @empty
-                                
-                            @endforelse --}}
                          
                             </tbody>
                         </table>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             
         </div>
      
