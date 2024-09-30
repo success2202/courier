@@ -23,4 +23,10 @@ class CourierController extends Controller
         ->with('tracking', $code);
     }
 
+
+    public function Tracking()
+    {
+        return view('users.tracking');
+    }
+
 }

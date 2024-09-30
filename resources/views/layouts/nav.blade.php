@@ -13,7 +13,7 @@
                 </div>
             </div>
         </div>
-        <a data-toggle="modal" href="#login-popup" class="sign-in fs-12 theme-clr-bg"> Track Now </a>
+        <a  href="{{route('users.courier.tracks')}}" class="sign-in fs-12 theme-clr-bg"> Track Now </a>
     </div>
     <nav class="menu-bar font2-title1">
         <div class="theme-container container">

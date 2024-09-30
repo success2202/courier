@@ -110,6 +110,7 @@ Route::controller(HomePageController::class)->group(function ()
 
 Route::controller(CourierController::class)->group(function() 
 {
+    Route::get('/courier/tracking/index', 'Tracking')->name('users.courier.tracks');
     Route::post('/courier/tracking', 'Index')->name('users.courier.index');
 });
 
