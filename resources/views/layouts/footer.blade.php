@@ -10,9 +10,9 @@
                 <div class="col-md-3 col-sm-6 footer-widget">
                     <h2 class="title-1 fw-900">quick links</h2>
                     <ul>
-                        <li> <a href="{{route('users.index')}}"> Home </a> </li>
-                        <li> <a href="{{route('users.blogs')}}"> Blogs</a> </li>
-                        <li> <a href="{{route('users.about-us')}}">About Us</a> </li>
+                        <li><a href="{{route('users.index')}}"> Home </a> </li>
+                        <li><a href="{{route('users.blogs')}}"> Blogs</a> </li>
+                        <li><a href="{{route('users.about-us')}}">About Us</a> </li>
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-6 footer-widget">
@@ -53,11 +53,5 @@
         </div>
     </div>
 </footer>
-<!-- /.Footer -->
-
-
 </main>
-<!-- / Main Wrapper -->
-
-<!-- Top -->
 <div class="to-top theme-clr-bg transition"> <i class="fa fa-angle-up"></i> </div>
