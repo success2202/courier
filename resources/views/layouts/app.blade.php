@@ -4,7 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', '') }}</title>
+	<meta name="description" content="We provide reliable courier services with same-day and express shipping options. Affordable, nationwide coverage with fast and secure deliveries for businesses and individuals.">
+
+    <!-- Meta Keywords -->
+    <meta name="keywords" content="courier services, same-day delivery, express shipping, nationwide delivery, fast courier service, reliable courier, package delivery, parcel delivery, affordable shipping">
+    <!-- Viewport for Mobile Responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Open Graph for Social Media Sharing -->
+    <meta property="og:title" content="Fast & Reliable Courier Services | Same-Day Delivery & Express Shipping">
+    <meta property="og:description" content="We provide reliable courier services with same-day and express shipping options. Affordable, nationwide coverage with fast and secure deliveries for businesses and individuals.">
+    <meta property="og:image" content="https://cggcourier.com/"> <!-- Replace with the actual image URL -->
+    <meta property="og:url" content="https://cggcourier.com/"> <!-- Replace with the actual URL -->
+    <meta property="og:type" content="cggcourier.com">
+
+    <title>{{ config('app.name', 'Cggcourier') }}</title>
     <meta charset="UTF-8">
 	<link rel="shortcut icon" href="{{asset('/images/fav.png')}}" type="image/x-icon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
