@@ -212,7 +212,7 @@
                                 <div class="owl-item cloned" style="width: 1170px; margin-right: 0px;">
                                     <div class="item">
                                 <div class="testimonial-img darkclr-border theme-clr font-2">
-                                    <img alt="" src="{{asset('assets/user.png')}}">
+                                    <img alt="" src="{{asset('images/image.png')}}">
                                     <span>,,</span>
                                 </div>
                                 <div class="testimonial-content">
