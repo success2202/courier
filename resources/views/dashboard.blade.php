@@ -205,38 +205,23 @@
                 </section>
                 <section class="testimonial mask-overlay">
                     <div class="theme-container container">               
-                        <div class="testimonial-slider no-pagination pad-120 owl-carousel owl-theme owl-loaded">
-                        @forelse($testimonials as  $test)
-                            <div class="owl-stage-outer">
-                            <div class="owl-stage" style="transform: translate3d(-5850px, 0px, 0px); transition: 0.25s; width: 8190px;">
-                                <div class="owl-item cloned" style="width: 1170px; margin-right: 0px;">
-                                    <div class="item">
-                                <div class="testimonial-img darkclr-border theme-clr font-2">
-                                    <img alt="" src="{{asset('images/image.png')}}">
+                        <div class="testimonial-slider no-pagination pad-120">
+                            @forelse($testimonials as $test)
+                            <div class="item">
+                                <div class="testimonial-img darkclr-border theme-clr font-2 wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s">
+                                    <img alt="" src="assets/img/block/testimonial-1.png" />
                                     <span>,,</span>
                                 </div>
                                 <div class="testimonial-content">
-                                    <p>  <i class="gray-clr fs-16">
-                                           {{$test->content}}
-                                        </i> </p>
-                                    <h2 class="title-2 pt-10"> <a href="#" class="white-clr fw-900">{{$test->name}} </a> </h2>
+                                    <p class="wow fadeInUp" data-wow-offset="50" data-wow-delay=".25s">  <i class="gray-clr fs-16">
+                                           {{$test->content}}</p>
+                                    <h2 class="title-2 pt-10 wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s"> 
+                                        <a href="#" class="white-clr fw-900"> {{$test->name}} </a> </h2>
                                 </div>
                             </div>
+                            @empty 
+                            @endif
                         </div>
-                          </div>
-                        </div>
-                        @empty 
-                        @endforelse
-                        <div class="owl-controls">
-                            <div class="owl-nav">
-                                <div class="owl-prev" style="">
-                                    <i class="fa fa-angle-left"></i>
-                                </div><div class="owl-next" style="">
-                                    <i class="fa fa-angle-right"></i></div></div>
-                                    <div class="owl-dots" style="display: block;">
-                                        <div class="owl-dot active"><span></span></div>
-                                        <div class="owl-dot"><span></span></div><div class="owl-dot"><span>
-                                            </span></div></div></div></div>
                     </div>
                 </section>
                 <section class="pad-80 about-wrap clrbg-before">
