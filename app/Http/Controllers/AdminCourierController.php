@@ -93,7 +93,8 @@ class AdminCourierController extends Controller
             'comment'=> $req->comment,
 
         ]);
-        $info = $tracking->load('courier');
+        $info = $courier->load('TrackingInfo');
+       
         if ($tracking) {
             Mail::to($courier->receiver_email)->send(new CourierMail($info->toArray()));
             Session::flash('alert', 'success');
@@ -133,12 +134,18 @@ class AdminCourierController extends Controller
     public function UpdateTracking(Request $request, $id)
     {
         $track = Tracking::where('id', decrypt($id))->first();
+        $courier = CourierInfo::where('id', $track->courier_info_id)->first();
         if($track)
         { 
             $track->fill($request->all())->save();
         }
-        Session::flash('alert', 'success');
-        Session::flash('message','Tracking Info updated successfully');
+        $info = $courier->load('TrackingInfo');
+        if ($track) {
+            Mail::to($courier->receiver_email)->send(new CourierMail($info->toArray()));
+            Session::flash('alert', 'success');
+            Session::flash('message', 'Tracking Informaiton added successfully');
+            return redirect()->intended(route('admin.courier.index'));
+        }
         return redirect()->intended(route('admin.courier.index'));
     }
 

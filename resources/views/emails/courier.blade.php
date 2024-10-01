@@ -80,28 +80,42 @@
         <img src="{{asset('assets/'.$settings->logo)}}" alt="ABC Delivery Logo">
     </div>
 
+    {{-- {{dd($data)}} --}}
     <!-- Customer Information Section -->
     <div class="section">
         <div class="section-header">Customer Information</div>
         <div class="section-content">
             <table>
                 <tr>
-                    <th>Name</th>
-                    <td></td>
+                    <th>Sender Name</th>
+                    <td>{{$data['sender_name']}}</td>
+                    <th>Sender Email</th>
+                    <td>{{$data['sender_email']}}</td>
+                </tr>
+                <tr>
+                <tr>
+                    <th>Receiver Name</th>
+                    <td>{{$data['receiver_name']}}</td>
                     <th>Receipt Number</th>
-                    <td>002</td>
+                    <td>{{$data['invoice_id']}}</td>
                 </tr>
                 <tr>
                     <th>Email</th>
-                    <td>johndoe@noemail.com</td>
+                    <td>{{$data['receiver_name']}}</td>
                     <th>Delivery Date</th>
-                    <td>April 10, 2019</td>
+                    <td>{{$data['pick_date']}}</td>
                 </tr>
                 <tr>
                     <th>Phone Number</th>
-                    <td>(123) 123-4567</td>
+                    <td>{{$data['receiver_phone']}}</td>
                     <th>Delivery Address</th>
-                    <td>3383 Public Works Drive, Chattanooga, TN, 37421</td>
+                    <td>{{$data['receiver_address']}}</td>
+                </tr>
+                <tr>
+                    <th>Tracking Code</th>
+                    <td>{{$data['tracking_info']['const_no']}}</td>
+                    <th>Delivery Address</th>
+                    <td>{{$data['receiver_address']}}</td>
                 </tr>
             </table>
         </div>
@@ -122,28 +136,16 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Product A</td>
-                        <td>10</td>
-                        <td>$50</td>
-                        <td>$500</td>
-                    </tr>
-                    <tr>
-                        <td>Product B</td>
-                        <td>10</td>
-                        <td>$30</td>
-                        <td>$300</td>
-                    </tr>
-                    <tr>
-                        <td>Product C</td>
-                        <td>5</td>
-                        <td>$20</td>
-                        <td>$100</td>
+                        <td>{{$data['product']}}</td>
+                        <td>{{$data['qty']}}</td>
+                        <td>{{$data['amount']}}</td>
+                        <td>{{$data['frieght']}}</td>
                     </tr>
                 </tbody>
                 <tfoot>
                     <tr>
                         <th colspan="3">Total</th>
-                        <th>$900</th>
+                        <th>{{$data['amount']}}</th>
                     </tr>
                 </tfoot>
             </table>
@@ -152,7 +154,7 @@
 
     <!-- Footer Section -->
     <div class="footer">
-        Thank you for choosing ABC Delivery!
+        Thank you for choosing {{$settings->site_name}} {{$settings->copyright}}
     </div>
 </div>
 

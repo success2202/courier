@@ -47,8 +47,9 @@
                                                     {{-- <th>mode</th> --}}
                                                      <th>qty</th>
                                                      <th>frieght</th>
+                                                     <th>Tracking ID</th>
                                                     <th>created_at</th>
-                                                    <th>Tracking ID</th>
+                                                   
                                                 <th></th>
                                             </tr>
                                             </thead>
