@@ -209,7 +209,7 @@
                             @forelse($testimonials as $test)
                             <div class="item">
                                 <div class="testimonial-img darkclr-border theme-clr font-2 wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s">
-                                    <img alt="" src="assets/img/block/testimonial-1.png" />
+                                    <img alt="" src="{{asset('images/image.png')}}" />
                                     <span>,,</span>
                                 </div>
                                 <div class="testimonial-content">
