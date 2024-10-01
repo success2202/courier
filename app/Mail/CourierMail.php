@@ -28,7 +28,7 @@ class CourierMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address('noreply@otegeeconcepts.com.ng', 'Cggcourier'),
+            from: new Address('support@cggcourier.com', 'Cggcourier'),
             subject: 'Contact Email',
 
         );
