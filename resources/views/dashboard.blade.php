@@ -171,6 +171,74 @@
                         </div>
                     </div>
                 </section>
+
+                <section class="s pad-80" style="background: #eee">                
+                    <div class="theme-container container">               
+                        <div class="row"> 
+                            <div class="col-md-3 col-sm-6">
+                                <div class="font-2 fs-50 wow fadeInLeft" data-wow-offset="50" data-wow-delay=".20s"> 
+                                   <img src="{{asset('/assets/1200px-FedEx_Express.svg_-165x120.png')}}">
+                                </div> 
+
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="font-2 fs-50 wow fadeInLeft" data-wow-offset="50" data-wow-delay=".20s"> 
+                                    <img src="{{asset('/assets/acw-logo-165x120.jpg')}}">
+                                </div> 
+                                
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="font-2 fs-50 wow fadeInLeft" data-wow-offset="50" data-wow-delay=".20s"> 
+                                    <img src="{{asset('/assets/asadaadsa.jpg')}}">
+                                </div> 
+                                
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="font-2 fs-50 wow fadeInLeft" data-wow-offset="50" data-wow-delay=".20s"> 
+                                    <img src="{{asset('/assets/ddd-165x120.jpg')}}">
+                                </div> 
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+                <section class="testimonial mask-overlay">
+                    <div class="theme-container container">               
+                        <div class="testimonial-slider no-pagination pad-120 owl-carousel owl-theme owl-loaded">
+                        @forelse($testimonials as  $test)
+                            <div class="owl-stage-outer">
+                            <div class="owl-stage" style="transform: translate3d(-5850px, 0px, 0px); transition: 0.25s; width: 8190px;">
+                                <div class="owl-item cloned" style="width: 1170px; margin-right: 0px;">
+                                    <div class="item">
+                                <div class="testimonial-img darkclr-border theme-clr font-2">
+                                    <img alt="" src="{{asset('assets/user.png')}}">
+                                    <span>,,</span>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>  <i class="gray-clr fs-16">
+                                           {{$test->content}}
+                                        </i> </p>
+                                    <h2 class="title-2 pt-10"> <a href="#" class="white-clr fw-900">{{$test->name}} </a> </h2>
+                                </div>
+                            </div>
+                        </div>
+                          </div>
+                        </div>
+                        @empty 
+                        @endforelse
+                        <div class="owl-controls">
+                            <div class="owl-nav">
+                                <div class="owl-prev" style="">
+                                    <i class="fa fa-angle-left"></i>
+                                </div><div class="owl-next" style="">
+                                    <i class="fa fa-angle-right"></i></div></div>
+                                    <div class="owl-dots" style="display: block;">
+                                        <div class="owl-dot active"><span></span></div>
+                                        <div class="owl-dot"><span></span></div><div class="owl-dot"><span>
+                                            </span></div></div></div></div>
+                    </div>
+                </section>
                 <section class="pad-80 about-wrap clrbg-before">
                     <span class="bg-text wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s"> </span>
                     <div class="theme-container container">               

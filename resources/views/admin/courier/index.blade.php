@@ -48,6 +48,7 @@
                                                      <th>qty</th>
                                                      <th>frieght</th>
                                                     <th>created_at</th>
+                                                    <th>Tracking ID</th>
                                                 <th></th>
                                             </tr>
                                             </thead>
@@ -139,6 +140,9 @@
                                                 <td>
                                                     {{$sp->frieght}}
                                                 </td> 
+                                                <td>
+                                                    <a href="#">@if($sp->TrackingInfo) {{$sp->TrackingInfo->const_no}} @else - @endif </a>
+                                                </td>
                                                   <td>
                                                     <a href="#">{{$sp->created_at}}</a>
                                                 </td>
@@ -155,7 +159,7 @@
                                                             @else 
                                                             <a href="{{route('admin.courier.tracking.details', encrypt($sp->id))}}" class="dropdown-item">Update Tracking Details</a>
                                                             @endif
-                                                            {{-- <a href="{{route('admin.courier.tracking.details', encrypt($sp->id))}}" class="dropdown-item">View Tracking Info</a> --}}
+                                                            {{-- <a href="{{route('admin.courier.tracking.details', encrypt($sp->id))}}" class="dropdown-item">Resend Email</a> --}}
                                                              </div>
                                                     </div>
                                                 </td>

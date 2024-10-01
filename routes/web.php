@@ -80,7 +80,7 @@ Route::group(['prefix' => 'manage', 'as' => 'admin.'], function(){
 
     Route::controller(AdminCourierController::class)->group(function () {
 
-    Route::get('/courier/index', 'CourierIndex')->name('courier.index');
+    // Route::get('/courier/index', 'CourierIndex')->name('courier.index');
     Route::get('/courier/create', 'createCourierInfo')->name('courier.create');
     Route::post('courier/store', 'CourierStore')->name('courier.store');
     Route::get('courier/edit/{id}', 'CourierEdit')->name('courier.edit');
@@ -106,6 +106,7 @@ Route::controller(HomePageController::class)->group(function ()
     Route::get('/services/{service}', 'Services')->name('users.services');
     Route::get('/blogs', 'BlogIndex')->name('users.blogs');
     Route::get('/blog-details/{id}', 'BlogDetails')->name('users.blog.details');
+    Route::post('/contact/form', 'ContactForm')->name('contact-us');
 });
 
 Route::controller(CourierController::class)->group(function() 

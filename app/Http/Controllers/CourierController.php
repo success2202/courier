@@ -13,7 +13,7 @@ class CourierController extends Controller
 
     public function Index(Request $req)
     {
-        sleep(5);
+        sleep(1);
         $code = Tracking::where('const_no', $req->constNo)->first();
         if($code)
         {

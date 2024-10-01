@@ -46,7 +46,7 @@
                                     @endforelse                               
                                 </ul>
                             </li>
-                            <li> <a href="{{route('users.about-us')}}"> Contact Us </a> </li>
+                            <li> <a href="{{route('users.contact-us')}}"> Contact Us </a> </li>
                             <li> <a href="{{route('users.blogs')}}"> Blogs</a> </li>
                             <li> </li>
                         </ul>                                                      

@@ -96,7 +96,7 @@
                                     <div class="form-group">
                                         <input type="text" name="receiver_email"  value="{{old('receiver_email')}}" class="form-control @error('receiver_email') is-invalid @enderror" id="exampleInputEmail1"
                                                aria-describedby="emailHelp" placeholder="" required>
-                                        <small id="emailHelp" class="form-text text-muted">Receiver name
+                                        <small id="emailHelp" class="form-text text-muted">Receiver Email
                                         </small>
                                         @error('receiver_email')
                                         <span class="invalid-feedback"> <small> * </small> </span>
@@ -107,7 +107,7 @@
                                     <div class="form-group">
                                         <input type="text" name="receiver_address"  value="{{old('receiver_address')}}" class="form-control @error('receiver_address') is-invalid @enderror" id="exampleInputEmail1"
                                                aria-describedby="emailHelp" placeholder="" required>
-                                        <small id="emailHelp" class="form-text text-muted">Receiver name
+                                        <small id="emailHelp" class="form-text text-muted">Receiver Address
                                         </small>
                                         @error('receiver_address')
                                         <span class="invalid-feedback"> <small> * </small> </span>
@@ -211,19 +211,7 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <input type="text" name="freight"  value="{{old('freight')}}" class="form-control @error('freight') is-invalid @enderror" id="exampleInputEmail1"
-                                                   aria-describedby="emailHelp" placeholder="" required>
-                                            <small id="emailHelp" class="form-text text-muted">Enter freight with currency
-                                            </small>
-                                            @error('freight')
-                                            <span class="invalid-feedback"> <small> * </small> </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                            </div>
-                            <div class="row">
+                            
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <input type="text" name="departure_date"  value="{{old('departure_date')}}" class="form-control @error('departure_date') is-invalid @enderror" id="exampleInputEmail1"
@@ -235,6 +223,8 @@
                                         @enderror
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <input type="text" name="pick_date"  value="{{old('pick_date')}}" class="form-control @error('pick_date') is-invalid @enderror" id="exampleInputEmail1"

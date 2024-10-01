@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CourierMail;
 use App\Models\CourierInfo;
 use App\Models\Tracking;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
 class AdminCourierController extends Controller
@@ -76,6 +78,8 @@ class AdminCourierController extends Controller
     public function TrackingStore(Request $req)
     {
 
+      
+        $courier = CourierInfo::where('id', $req->courier_info_id)->first();
       $tracking =  Tracking::create([
             'courier_info_id' => $req->courier_info_id,
             'const_no' => 'CGG-'.rand(111111111,99999999),
@@ -89,10 +93,12 @@ class AdminCourierController extends Controller
             'comment'=> $req->comment,
 
         ]);
+        $info = $tracking->load('courier');
         if ($tracking) {
+            Mail::to($courier->receiver_email)->send(new CourierMail($info->toArray()));
             Session::flash('alert', 'success');
             Session::flash('message', 'Tracking Informaiton added successfully');
-            return back();
+            return redirect()->intended(route('admin.courier.index'));
         }
         Session::flash('alert', 'error');
         Session::flash('message', 'Something  went wrong');
@@ -133,7 +139,7 @@ class AdminCourierController extends Controller
         }
         Session::flash('alert', 'success');
         Session::flash('message','Tracking Info updated successfully');
-        return back();
+        return redirect()->intended(route('admin.courier.index'));
     }
 
     public function CourierEdit($id)
