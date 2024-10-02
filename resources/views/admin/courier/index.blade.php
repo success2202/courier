@@ -20,8 +20,8 @@
                             </div>
                             
                             <div class="row">
-                                <div class="col-md-12">
-                                 <div class="table-responsive">
+                                <div class="col-md-12" style="overflow:scroll">
+                                 <div class="table-" >
                                         <table id="myTable" class="table table-striped table-bordered">
                                            <thead>
                                             <tr>
