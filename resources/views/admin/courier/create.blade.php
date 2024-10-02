@@ -47,7 +47,7 @@
                                
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <input type="text" name="sender_email"  value="{{old('sender_email')}}" class="form-control @error('sender_email') is-invalid @enderror" id="exampleInputEmail1"
+                                            <input type="email" name="sender_email"  value="{{old('sender_email')}}" class="form-control @error('sender_email') is-invalid @enderror" id="exampleInputEmail1"
                                                    aria-describedby="emailHelp" placeholder="" required>
                                             <small id="emailHelp" class="form-text text-muted">Sender Email
                                             </small>
@@ -94,7 +94,7 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="receiver_email"  value="{{old('receiver_email')}}" class="form-control @error('receiver_email') is-invalid @enderror" id="exampleInputEmail1"
+                                        <input type="email" name="receiver_email"  value="{{old('receiver_email')}}" class="form-control @error('receiver_email') is-invalid @enderror" id="exampleInputEmail1"
                                                aria-describedby="emailHelp" placeholder="" required>
                                         <small id="emailHelp" class="form-text text-muted">Receiver Email
                                         </small>
@@ -236,7 +236,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                          <div class="col-md-4 ">
+                                          <div class="col-md-6 ">
                                               <div class="custom-file">
                                             <input type="file" name="images[]" multiple class="custom-file-input  @error('images') is-invalid @enderror">
                                                 <label class="custom-file-label" for="customFile">Select Product Images</label>
