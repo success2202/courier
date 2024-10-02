@@ -98,7 +98,7 @@
             <div class="row">
                 
                 <div class="col-md-7 pad-30 wow fadeInLeft" data-wow-offset="50" data-wow-delay=".30s" style="background:#0000001b"> 
-                    @if(isset($tracking->courier->images && count($tracking->courier->images) > 0))
+                    @if(isset($tracking->courier->images) && count($tracking->courier->images) > 0)
                     @foreach (json_decode($tracking->courier->images) as $ss)
                     <img alt="" src="{{asset('images/'.$ss)}}" />  
                     @endforeach
