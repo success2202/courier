@@ -8,6 +8,7 @@ use App\Models\Tracking;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 
 class AdminCourierController extends Controller
 {
@@ -22,6 +23,20 @@ class AdminCourierController extends Controller
 
     public function CourierStore(Request $req)
     {
+        $valid = Validator::make($req->all(), [
+            'images' => 'required',
+            'sender_email' => 'required',
+            'receiver_email' => 'required',
+            'sender_name' => 'required',
+            'receiver_name' => 'required',
+            'destination' => 'required',
+        ]);
+        if($valid->fails())
+        {
+            Session::flash('alert', 'error');
+            Session::flash('message', 'Some Fields are missing');
+            return back()->withInput($req->all()); 
+        }
         if ($req->images) {
             $images = [];
             foreach ($req->images as $image) {
