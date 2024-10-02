@@ -37,6 +37,7 @@ class AdminCourierController extends Controller
             Session::flash('message', 'Some Fields are missing');
             return back()->withInput($req->all()); 
         }
+        try{
         if ($req->images) {
             $images = [];
             foreach ($req->images as $image) {
@@ -76,9 +77,12 @@ class AdminCourierController extends Controller
             Session::flash('message', 'Courier Informaiton added successfully');
             return back();
         }
+    }catch(\Exception $e)
+    {
         Session::flash('alert', 'error');
         Session::flash('message', 'Something  went wrong');
         return back();
+    }
     }
 
     public function Tracking($id)
@@ -93,7 +97,7 @@ class AdminCourierController extends Controller
     public function TrackingStore(Request $req)
     {
 
-      
+      try{
         $courier = CourierInfo::where('id', $req->courier_info_id)->first();
       $tracking =  Tracking::create([
             'courier_info_id' => $req->courier_info_id,
@@ -116,9 +120,12 @@ class AdminCourierController extends Controller
             Session::flash('message', 'Tracking Informaiton added successfully');
             return redirect()->intended(route('admin.courier.index'));
         }
+    }catch(\Exception $e)
+    {
         Session::flash('alert', 'error');
         Session::flash('message', 'Something  went wrong');
         return back();
+    }
     }
 
     public function Index()
@@ -131,6 +138,7 @@ class AdminCourierController extends Controller
 
     public function TrackingDetails($id)
     {
+        try{
         $track = Tracking::where('courier_info_id', decrypt($id))->first();
         if(!$track)
         { 
@@ -144,10 +152,17 @@ class AdminCourierController extends Controller
         ->with('courier', CourierInfo::where('id', decrypt($id))->first())
         ->with('bheading', 'tracking details')
         ->with('breadcrumb', 'tracking details');
+    }catch(\Exception $e)
+    {
+        Session::flash('alert', 'error');
+        Session::flash('message', 'Something  went wrong');
+        return back();
+    }
     }
 
     public function UpdateTracking(Request $request, $id)
     {
+        try{
         $track = Tracking::where('id', decrypt($id))->first();
         $courier = CourierInfo::where('id', $track->courier_info_id)->first();
         if($track)
@@ -161,7 +176,12 @@ class AdminCourierController extends Controller
             Session::flash('message', 'Tracking Informaiton added successfully');
             return redirect()->intended(route('admin.courier.index'));
         }
-        return redirect()->intended(route('admin.courier.index'));
+    }catch(\Exception $e)
+    {
+        Session::flash('alert', 'error');
+        Session::flash('message', 'Something  went wrong');
+        return back();
+    }
     }
 
     public function CourierEdit($id)
@@ -174,6 +194,7 @@ class AdminCourierController extends Controller
 
     public function CourierUpdate(Request $req, $id)
     {
+        try{
         if ($req->images) {
             $images = [];
             foreach ($req->images as $image) {
@@ -211,7 +232,12 @@ class AdminCourierController extends Controller
             Session::flash('message', 'Courier Informaiton added successfully');
             return back();
         }
+    }catch(\Exception $e)
+    {
+        Session::flash('alert', 'error');
+        Session::flash('message', 'Something  went wrong');
         return back();
+    }
     
     }
 }
