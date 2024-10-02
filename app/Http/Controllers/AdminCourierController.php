@@ -186,7 +186,7 @@ class AdminCourierController extends Controller
         if($courier)
         {
             $courier->product = $req->product;      
-            $courier->images = isset($images)?json_encode($images):'';
+            $courier->images = isset($images)?json_encode($images):$courier->images;
             $courier->weight  = $req->weight;
             $courier->amount = $req->amount;
             $courier->size = $req->size;
