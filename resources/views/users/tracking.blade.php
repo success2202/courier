@@ -96,45 +96,111 @@
             </div>
         </div>
             <div class="row">
-                
-                <div class="col-md-7 pad-30 wow fadeInLeft" data-wow-offset="50" data-wow-delay=".30s" style="background:#0000001b"> 
-                    @if(isset($tracking->courier->images) && is_array($tracking->courier->images))
-                    @foreach (json_decode($tracking->courier->images) as $ss)
-                    <img alt="" src="{{asset('images/'.$ss)}}" />  
-                    @endforeach
-                    @endif
-                    
-                    
-                </div>
-                <div class="col-md-5 pad-30 wow fadeInRight" data-wow-offset="50" data-wow-delay=".30s"> 
-                    <div class="prod-info white-clr">
+                <div class="col-md-12 pad-30 wow fadeInRight" data-wow-offset="50" data-wow-delay=".30s"> 
+                    <div class="row">
+                        <div class="col-md-5">
+                            <h3>Shipping Information</h3>
+                            <ul>
+                                <li>
+                                
+                                  <span class="fs-16">{{$tracking->courier->sender_name}}</span> <br>
+                                   <span class="fs-16">{{$tracking->courier->sender_email}}</span> <br>
+                                    <span class="fs-16">{{$tracking->courier->sender_phone}}</span> <br>
+                                   <span class="fs-16">{{$tracking->courier->sender_address}}</span> <br>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-5">
+                            <h3> Reciever Information</h3>
+                            <ul>
+                                <li>
+                                
+                                  <span class="fs-16">{{$tracking->courier->receiver_name}}</span> <br>
+                                   <span class="fs-16">{{$tracking->courier->receiver_email}}</span> <br>
+                                    <span class="fs-16">{{$tracking->courier->receiver_phone}}</span> <br>
+                                   <span class="fs-16">{{$tracking->courier->receiver_address}}</span> <br>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <div class="col-md-2">
+                            @if(isset($tracking->courier->images))
+                            @foreach (json_decode($tracking->courier->images) as $ss)
+                            {{$tracking->courier->images}}
+                            <img alt="" src="{{asset('images/'.$ss)}}"  max-height="120px"/>  
+                            @endforeach
+                            @endif
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                    <div class="prod-info -clr" style="background:#f9f9f9; color:#000">
+                        <h5>
+                            Shipment Information
+                            <hr>
+                        </h5>
                         <ul>
                             <li> <span class="title-2">Product Name:</span> <span class="fs-16">{{$tracking->courier->product}}</span> </li>
-                            <li> <span class="title-2">Product id:</span> <span class="fs-16">{{$tracking->courier->invoice_id}}</span> </li>
-                            <li> <span class="title-2">order date:</span> <span class="fs-16">{{$tracking->courier->created_at->format('d-m-Y')}}</span> </li>
-                            <li> <span class="title-2">order status:</span> <span class="fs-16 theme-clr">
-                                @if($tracking->status == 'CREATED') <span class=" bg-primary">CREATED  </span> 
-                                @elseif($tracking->status == 'SHIPPED') <span class=" bg-info">SHIPPED  </span>
-                                @elseif($tracking->status == 'IN_TRANSIT') <span class=" bg-secondary">IN TRANSIT  </span>
-                                @elseif($tracking->status == 'IN_PROCESS') <span class=" bg-primary">IN PROCESS  </span>
-                                @elseif($tracking->status == 'ON_HOLD') <span class=" bg-warning">ON HOLD  </span>
-                                @elseif($tracking->status == 'CANCELLED') <span class=" bg-danger">CANCELLED  </span>@endif
+                            <li> <span class="title-2">Reference No.:</span> <span class="fs-16">{{$tracking->courier->invoice_id}}</span> </li>
+                            <li> <span class="title-2">Delivrey status:</span> <span class="fs-16 theme-clr">
+                                @if($tracking->status == 'CREATED') <span class=" bg-primary p-1">CREATED  </span> 
+                                @elseif($tracking->status == 'SHIPPED') <span class=" bg-info p-1">SHIPPED  </span>
+                                @elseif($tracking->status == 'IN_TRANSIT') <span class=" bg-secondary p-1">IN TRANSIT  </span>
+                                @elseif($tracking->status == 'IN_PROCESS') <span class=" bg-primary p-1">IN PROCESS  </span>
+                                @elseif($tracking->status == 'ON_HOLD') <span class=" bg-warning p-1">ON HOLD  </span>
+                                @elseif($tracking->status == 'CANCELLED') <span class=" bg-danger p-1">CANCELLED  </span>@endif
                             </span> </li>
+                            <li> <span class="title-2">Origin:</span> <span class="fs-16">{{$tracking->courier->origin}}</span> </li>
+                            <li> <span class="title-2">Destination:</span> <span class="fs-16">{{$tracking->courier->destination}}</span> </li>
+                            <li> <span class="title-2">Departure Time::</span> <span class="fs-16">{{$tracking->courier->departure_date}}</span> </li>
+                            <li> <span class="title-2">Carrier:</span> <span class="fs-16">{{$settings->site_name}}</span> </li>
+                            <li> <span class="title-2">Package:</span> <span class="fs-16">{{$tracking->courier->type}}</span> </li>
+                            <li> <span class="title-2">Expected Delivery Date:</span> <span class="fs-16">{{$tracking->courier->invoice_id}}</span> </li>
+                             
+                            <li> <span class="title-2">order date:</span> <span class="fs-16">{{$tracking->courier->created_at->format('d-m-Y')}}</span> </li>
+                           
                             <li> <span class="title-2">weight (kg):</span> <span class="fs-16">{{$tracking->courier->weight}} KG</span> </li>
                             <li> <span class="title-2">Order Amount:</span> <span class="fs-16">${{$tracking->courier->frieght}}</span> </li>
-                            <li> <span class="btn btn-info" id="sender" onclick="">View Sender Details</span> </li>
-                
-                            <li hidden id="details">
-                                
-                                Sender Name: <span class="fs-16">{{$tracking->courier->sender_name}}</span> <br>
-                                Sender Email: <span class="fs-16">{{$tracking->courier->sender_email}}</span> <br>
-                                Sender Phone:<span class="fs-16">{{$tracking->courier->sender_phone}}</span> <br>
-                                Sender Address:<span class="fs-16">{{$tracking->courier->sender_address}}</span> <br>
-                            
-                            </li>
-
+                            <li> <span class="title-2">Total Frieght:</span> <span class="fs-16">{{$tracking->courier->invoice_id}}</span> </li>
+                            <li> <span class="title-2">Comment:</span> <span class="fs-16">{{$tracking->courier->invoice_id}}</span> </li>
                         </ul>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+            {{-- <div class="col-md-4 pad-30 wow fadeInLeft" data-wow-offset="50" data-wow-delay=".30s" style="background:#0000001b"> 
+               
+            </div> --}}
+                <div class="col-12 mt-5">
+                    <h3>Shipment History</h3>
+                <table class="table">
+                <thead>
+                    <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Location</th>
+                    <th>Status</th>
+                    <th>Remarks</th>
+                </tr>
+                </thead> 
+                <tbody>
+                    @foreach ($tracking->trackHistory as $tracks)
+                    <tr>
+                    <td>{{$tracks->date}} </td>
+                    <td>{{$tracks->time}} </td>
+                    <td>{{$tracks->location}} </td>
+                    <td>{{$tracks->status}} </td>
+                    <td>{{$tracks->remarks}} </td>
+                    </tr>    
+                    @endforeach  
+                </tbody> 
+                </table>
+            </div>
+        </div>
+        </div>
+    </div>
+                    {{-- ---------------- --}}
                 </div>
             </div>
            

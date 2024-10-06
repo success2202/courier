@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Mail\CourierMail;
 use App\Models\CourierInfo;
 use App\Models\Tracking;
+use App\Models\TrackingHistory;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
@@ -87,7 +89,6 @@ class AdminCourierController extends Controller
 
     public function Tracking($id)
     {
-        
         return view('admin.courier.tracking')
             ->with('courier', CourierInfo::where('id', decrypt($id))->first())
             ->with('bheading', 'Create Tracking Info')
@@ -97,7 +98,7 @@ class AdminCourierController extends Controller
     public function TrackingStore(Request $req)
     {
 
-      try{
+    //   try{
         $courier = CourierInfo::where('id', $req->courier_info_id)->first();
       $tracking =  Tracking::create([
             'courier_info_id' => $req->courier_info_id,
@@ -115,17 +116,27 @@ class AdminCourierController extends Controller
         $info = $courier->load('TrackingInfo');
        
         if ($tracking) {
+            $date = Carbon::now();
+            TrackingHistory::create([
+            'tracking_id' => $tracking->id, 
+            'date' => $date,
+            'time' =>  date('h:ia'), 
+            'location' => $req->current_location, 
+            'status' => $req->status,
+            'updated_by' =>auth()->user()->name,
+            'Remarks' => $req->comment
+            ]);
             Mail::to($courier->receiver_email)->send(new CourierMail($info->toArray()));
             Session::flash('alert', 'success');
             Session::flash('message', 'Tracking Informaiton added successfully');
             return redirect()->intended(route('admin.courier.index'));
         }
-    }catch(\Exception $e)
-    {
-        Session::flash('alert', 'error');
-        Session::flash('message', 'Something  went wrong');
-        return back();
-    }
+    // }catch(\Exception $e)
+    // {
+    //     Session::flash('alert', 'error');
+    //     Session::flash('message', 'Something  went wrong');
+    //     return back();
+    // }
     }
 
     public function Index()
@@ -162,12 +173,23 @@ class AdminCourierController extends Controller
 
     public function UpdateTracking(Request $request, $id)
     {
-        try{
+        // try{
         $track = Tracking::where('id', decrypt($id))->first();
         $courier = CourierInfo::where('id', $track->courier_info_id)->first();
         if($track)
         { 
             $track->fill($request->all())->save();
+
+            $date = Carbon::now();
+            TrackingHistory::create([
+            'tracking_id' => $track->id, 
+            'date' => $date,
+            'time' =>  date('h:ia'), 
+            'location' => $request->current_location, 
+            'status' => $request->status,
+            'updated_by' => auth()->user()->name,
+            'Remarks' => $request->comment
+            ]);
         }
         $info = $courier->load('TrackingInfo');
         if ($track) {
@@ -176,12 +198,12 @@ class AdminCourierController extends Controller
             Session::flash('message', 'Tracking Informaiton added successfully');
             return redirect()->intended(route('admin.courier.index'));
         }
-    }catch(\Exception $e)
-    {
-        Session::flash('alert', 'error');
-        Session::flash('message', 'Something  went wrong');
-        return back();
-    }
+    // }catch(\Exception $e)
+    // {
+    //     Session::flash('alert', 'error');
+    //     Session::flash('message', 'Something  went wrong');
+    //     return back();
+    // }
     }
 
     public function CourierEdit($id)

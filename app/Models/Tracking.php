@@ -17,5 +17,10 @@ class Tracking extends Model
     {
         return $this->belongsTo(CourierInfo::class, 'courier_info_id', 'id');
     }
+
+    public function trackHistory()
+    {
+        return $this->hasMany(TrackingHistory::class, 'tracking_id', 'id');
+    }
 }
 

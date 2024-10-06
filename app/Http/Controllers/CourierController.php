@@ -18,7 +18,7 @@ class CourierController extends Controller
         $code = Tracking::where('const_no', $req->constNo)->first();
         if($code)
         {
-            $code->load('courier');
+            $code->load('courier', 'trackHistory');
         }
         return view('users.tracking')
         ->with('tracking', $code);
