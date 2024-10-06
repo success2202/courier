@@ -127,7 +127,7 @@
                         <div class="col-md-2">
                             @if(isset($tracking->courier->images))
                             @foreach (json_decode($tracking->courier->images) as $ss)
-                            {{$tracking->courier->images}}
+                        
                             <img alt="" src="{{asset('images/'.$ss)}}"  max-height="120px"/>  
                             @endforeach
                             @endif
