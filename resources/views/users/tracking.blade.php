@@ -156,7 +156,7 @@
                             <li> <span class="title-2">Departure Time::</span> <span class="fs-16">{{$tracking->courier->departure_date}}</span> </li>
                             <li> <span class="title-2">Carrier:</span> <span class="fs-16">{{$settings->site_name}}</span> </li>
                             <li> <span class="title-2">Package:</span> <span class="fs-16">{{$tracking->courier->type}}</span> </li>
-                            <li> <span class="title-2">Expected Delivery Date:</span> <span class="fs-16">{{$tracking->courier->arrival_time}}</span> </li>
+                            <li> <span class="title-2">Expected Delivery Date:</span> <span class="fs-16">{{$tracking->arrival_time}}</span> </li>
                              
                             <li> <span class="title-2">order date:</span> <span class="fs-16">{{$tracking->courier->created_at->format('d-m-Y')}}</span> </li>
                            
