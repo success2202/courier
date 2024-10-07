@@ -161,7 +161,7 @@
                             <li> <span class="title-2">order date:</span> <span class="fs-16">{{$tracking->courier->created_at->format('d-m-Y')}}</span> </li>
                            
                             <li> <span class="title-2">weight (kg):</span> <span class="fs-16">{{$tracking->courier->weight}}</span> </li>
-                            <li> <span class="title-2">Order Amount:</span> <span class="fs-16">{{$tracking->courier->frieght}}</span> </li>
+                            <li> <span class="title-2">Shipment fee :</span> <span class="fs-16">{{$tracking->courier->frieght}}</span> </li>
                             <li> <span class="title-2">Total Frieght:</span> <span class="fs-16">{{$tracking->courier->amount}}</span> </li>
                             <li> <span class="title-2">Comment:</span> <span class="fs-16">{{$tracking->courier->comment}}</span> </li>
                         </ul>
