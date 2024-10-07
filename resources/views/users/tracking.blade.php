@@ -153,7 +153,7 @@
                             </span> </li>
                             <li> <span class="title-2">Origin:</span> <span class="fs-16">{{$tracking->courier->origin}}</span> </li>
                             <li> <span class="title-2">Destination:</span> <span class="fs-16">{{$tracking->courier->destination}}</span> </li>
-                            <li> <span class="title-2">Departure Time::</span> <span class="fs-16">{{$tracking->courier->departure_date}}</span> </li>
+                            <li> <span class="title-2">Departure Date:</span> <span class="fs-16">{{$tracking->courier->departure_date}}</span> </li>
                             <li> <span class="title-2">Carrier:</span> <span class="fs-16">{{$settings->site_name}}</span> </li>
                             <li> <span class="title-2">Package:</span> <span class="fs-16">{{$tracking->courier->type}}</span> </li>
                             {{-- <li> <span class="title-2">Expected Delivery Date:</span> <span class="fs-16">{{$tracking->arrival_time}}</span> </li> --}}
