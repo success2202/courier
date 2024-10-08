@@ -157,12 +157,12 @@
                             </span> </li>
                             <li> <span class="title-2">Origin:</span> <span class="fs-16">{{$tracking->courier->origin}}</span> </li>
                             <li> <span class="title-2">Destination:</span> <span class="fs-16">{{$tracking->courier->destination}}</span> </li>
-                            <li> <span class="title-2">Departure Date:</span> <span class="fs-16">{{$tracking->courier->pick_date}}</span> </li>
+                            <li> <span class="title-2">Departure Date:</span> <span class="fs-16">{{$tracking->courier->departure_date}}</span> </li>
                             <li> <span class="title-2">Carrier:</span> <span class="fs-16">{{$settings->site_name}}</span> </li>
                             <li> <span class="title-2">Package:</span> <span class="fs-16">{{$tracking->courier->type}}</span> </li>
                             {{-- <li> <span class="title-2">Expected Delivery Date:</span> <span class="fs-16">{{$tracking->arrival_time}}</span> </li> --}}
                              
-                            <li> <span class="title-2">Arrival date:</span> <span class="fs-16">{{$tracking->courier->departure_date}}</span> </li>
+                            <li> <span class="title-2">Arrival date:</span> <span class="fs-16">{{$tracking->courier->pick_date}}</span> </li>
                            
                             <li> <span class="title-2">weight (kg):</span> <span class="fs-16">{{$tracking->courier->weight}}</span> </li>
                             <li> <span class="title-2">Delivery charges  :</span> <span class="fs-16">{{$tracking->courier->frieght}}</span> </li>
