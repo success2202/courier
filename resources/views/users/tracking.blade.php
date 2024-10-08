@@ -136,10 +136,10 @@
                     <div class="row">
                         <div class="col-12">
                     <div class="prod-info -clr" style="background:#f9f9f9; color:#000">
-                        <h5>
+                        <h3>
                             Shipment Information
                             <hr>
-                        </h5>
+                        </h3>
                         <ul>
                             <li> <span class="title-2">Product Name:</span> <span class="fs-16">{{$tracking->courier->product}}</span> </li>
                             <li> <span class="title-2">Reference No.:</span> <span class="fs-16">{{$tracking->courier->invoice_id}}</span> </li>
@@ -158,11 +158,11 @@
                             <li> <span class="title-2">Package:</span> <span class="fs-16">{{$tracking->courier->type}}</span> </li>
                             {{-- <li> <span class="title-2">Expected Delivery Date:</span> <span class="fs-16">{{$tracking->arrival_time}}</span> </li> --}}
                              
-                            <li> <span class="title-2">Shipment date:</span> <span class="fs-16">{{$tracking->courier->created_at->format('d-m-Y')}}</span> </li>
+                            <li> <span class="title-2">Arrival date:</span> <span class="fs-16">{{$tracking->courier->created_at->format('d/m/Y')}}</span> </li>
                            
                             <li> <span class="title-2">weight (kg):</span> <span class="fs-16">{{$tracking->courier->weight}}</span> </li>
                             <li> <span class="title-2">Delivery charges  :</span> <span class="fs-16">{{$tracking->courier->frieght}}</span> </li>
-                            <li> <span class="title-2">Total Frieght:</span> <span class="fs-16">{{$tracking->courier->amount}}</span> </li>
+                            <li> <span class="title-2">Total Freight:</span> <span class="fs-16">{{$tracking->courier->amount}}</span> </li>
                             <li> <span class="title-2">Comment:</span> <span class="fs-16">{{$tracking->courier->comment}}</span> </li>
                         </ul>
                     </div>
