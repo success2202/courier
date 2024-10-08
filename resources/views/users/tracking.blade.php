@@ -56,7 +56,7 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-7">
                     <div class="card">
-                        <div class="card-body bg-primary"  style="width: 400px; text-align:center">
+                        <div class="card-body bg-primary"  style="width: 1000px; text-align:center">
                            <p class=""> Details retrieve successfully</p> 
                         </div>
                     </div>
