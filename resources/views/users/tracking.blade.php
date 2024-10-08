@@ -165,8 +165,8 @@
                             <li> <span class="title-2">Arrival date:</span> <span class="fs-16">{{$tracking->courier->pick_date}}</span> </li>
                            
                             <li> <span class="title-2">weight (kg):</span> <span class="fs-16">{{$tracking->courier->weight}}</span> </li>
-                            <li> <span class="title-2">Delivery charges  :</span> <span class="fs-16">{{$tracking->courier->frieght}}</span> </li>
-                            <li> <span class="title-2">Total Freight:</span> <span class="fs-16">{{$tracking->courier->amount}}</span> </li>
+                            <li> <span class="title-2">Delivery charges  :</span> <span class="fs-16">{{$tracking->courier->amount}}</span> </li>
+                            <li> <span class="title-2">Total Freight:</span> <span class="fs-16">{{$tracking->courier->frieght}}</span> </li>
                             <li> <span class="title-2">Comment:</span> <span class="fs-16">{{$tracking->courier->comment}}</span> </li>
                         </ul>
                     </div>
