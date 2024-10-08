@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('contents')
-
+<style>
+.fs-16{
+    font-size: 16px !important;
+}
+</style>
 
 <article> 
     <!-- Breadcrumb -->
@@ -99,7 +103,7 @@
                 <div class="col-md-12 pad-30 wow fadeInRight" data-wow-offset="50" data-wow-delay=".30s"> 
                     <div class="row">
                         <div class="col-md-5">
-                            <h3>Shipping Information</h3>
+                            <h3>Sender Information</h3>
                             <ul>
                                 <li>
                                 
@@ -136,10 +140,10 @@
                     <div class="row">
                         <div class="col-12">
                     <div class="prod-info -clr" style="background:#f9f9f9; color:#000">
-                        <h3>
-                            Shipment Information
+                        <h5 style="padding: 10px;">
+                             SHIPMENT INFORMATION 
                             <hr>
-                        </h3>
+                        </h5>
                         <ul>
                             <li> <span class="title-2">Product Name:</span> <span class="fs-16">{{$tracking->courier->product}}</span> </li>
                             <li> <span class="title-2">Reference No.:</span> <span class="fs-16">{{$tracking->courier->invoice_id}}</span> </li>
@@ -153,12 +157,12 @@
                             </span> </li>
                             <li> <span class="title-2">Origin:</span> <span class="fs-16">{{$tracking->courier->origin}}</span> </li>
                             <li> <span class="title-2">Destination:</span> <span class="fs-16">{{$tracking->courier->destination}}</span> </li>
-                            <li> <span class="title-2">Departure Date:</span> <span class="fs-16">{{$tracking->courier->departure_date}}</span> </li>
+                            <li> <span class="title-2">Departure Date:</span> <span class="fs-16">{{$tracking->courier->pick_date}}</span> </li>
                             <li> <span class="title-2">Carrier:</span> <span class="fs-16">{{$settings->site_name}}</span> </li>
                             <li> <span class="title-2">Package:</span> <span class="fs-16">{{$tracking->courier->type}}</span> </li>
                             {{-- <li> <span class="title-2">Expected Delivery Date:</span> <span class="fs-16">{{$tracking->arrival_time}}</span> </li> --}}
                              
-                            <li> <span class="title-2">Arrival date:</span> <span class="fs-16">{{$tracking->courier->created_at->format('d/m/Y')}}</span> </li>
+                            <li> <span class="title-2">Arrival date:</span> <span class="fs-16">{{$tracking->courier->departure_date}}</span> </li>
                            
                             <li> <span class="title-2">weight (kg):</span> <span class="fs-16">{{$tracking->courier->weight}}</span> </li>
                             <li> <span class="title-2">Delivery charges  :</span> <span class="fs-16">{{$tracking->courier->frieght}}</span> </li>
@@ -173,7 +177,7 @@
                
             </div> --}}
                 <div class="col-12 mt-5">
-                    <h3>Shipment History</h3>
+                    <h5>  <i> SHIPMENT HISTORY </i></h5>
                 <table class="table">
                 <thead>
                     <tr>
