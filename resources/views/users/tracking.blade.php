@@ -90,7 +90,7 @@
                         <h2 class="title-1 no-margin">{{$tracking->current_city}}</h2>
                     </div>
                     <div class="col-md-2 col-xs-8 col-sm-1 no-pad">
-                        <p class="fs-12 no-margin"> [ <b class="black-clr"> Arrival Date: {{$tracking->arrival_time}} </b> ] </p>                                
+                        <p class="fs-12 no-margin"> [ <b class="black-clr"> Arrival Date: {{$tracking->courier->pick_date}} </b> ] </p>                                
                     </div>
                     <div class="col-md-2 col-xs-8 col-sm-2 text-right">
                         <p class="fs-12 no-margin"> Destination </p>
