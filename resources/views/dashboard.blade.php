@@ -183,22 +183,24 @@
                             </div>
                             <div class="col-md-3 col-sm-6">
                                 <div class="font-2 fs-50 wow fadeInLeft" data-wow-offset="50" data-wow-delay=".20s"> 
-                                    <img src="{{asset('/assets/acw-logo-165x120.jpg')}}">
+                                    <img src="{{asset('/assets/acw-logo.png')}}">
                                 </div> 
                                 
                             </div>
                             <div class="col-md-3 col-sm-6">
                                 <div class="font-2 fs-50 wow fadeInLeft" data-wow-offset="50" data-wow-delay=".20s"> 
-                                    <img src="{{asset('/assets/asadaadsa.jpg')}}">
+                                    <img src="{{asset('/assets/asadaadsa2.png')}}">
                                 </div> 
                                 
                             </div>
                             <div class="col-md-3 col-sm-6">
                                 <div class="font-2 fs-50 wow fadeInLeft" data-wow-offset="50" data-wow-delay=".20s"> 
-                                    <img src="{{asset('/assets/ddd-165x120.jpg')}}">
+                                    <img src="{{asset('/assets/ddd.png')}}">
                                 </div> 
                                 
+                               
                             </div>
+
                         </div>
                     </div>
 
