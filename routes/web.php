@@ -82,6 +82,7 @@ Route::group(['prefix' => 'manage', 'as' => 'admin.'], function(){
 
     // Route::get('/courier/index', 'CourierIndex')->name('courier.index');
     Route::get('/courier/create', 'createCourierInfo')->name('courier.create');
+    // Route::get('/courier/delete/{id}', 'DeleteCourier')->name('courier.delete');
     Route::post('courier/store', 'CourierStore')->name('courier.store');
     Route::get('courier/edit/{id}', 'CourierEdit')->name('courier.edit');
     Route::post('courier/update/{id}', 'CourierUpdate')->name('courier.update');

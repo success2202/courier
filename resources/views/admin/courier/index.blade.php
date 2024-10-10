@@ -8,6 +8,13 @@
                             <div class="d-flex justify-content-between">
                                 <h6 class="card-title">Courier Information</h6>
                                 <div>
+                                    {{-- @if (session()->has('message'))
+                                    <div class="alert alert-danger" style="width: 600px">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">X</button>
+                                       <p style="text-align: center; font-size: 13px;"> {{ session()->get('message') }} </p> 
+                                    </div>
+                                        
+                                    @endif --}}
                                  
                                     <div class="dropdown">
                                         <a href="#" data-toggle="dropdown" aria-haspopup="true"
@@ -155,6 +162,7 @@
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
                                                             <a href="{{route('admin.courier.edit', encrypt($sp->id))}}" class="dropdown-item">Edit Courier</a>
+                                                            {{-- <a href="{{route('admin.courier.delete', encrypt($sp->id))}}" onclick="return confirm('Are you sure you want to delete this post ?')" class="dropdown-item">Delete Courier</a> --}}
                                                             @if(!$sp->TrackingInfo)
                                                             <a href="{{route('admin.courier.tracking', encrypt($sp->id))}}" class="dropdown-item">Create Tracking</a>
                                                             @else 

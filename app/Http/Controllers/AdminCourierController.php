@@ -214,6 +214,13 @@ class AdminCourierController extends Controller
         ->with('breadcrumb', 'courier Edit');
     }
 
+    // public function DeleteCourier($id)
+    // {
+    //     $delete = CourierInfo::find(decrypt($id));
+    //     $delete->delete();
+    //     return redirect()->back()->with('message','Post Deleted Successfully');
+    // }
+
     public function CourierUpdate(Request $req, $id)
     {
         try{

@@ -141,7 +141,7 @@
                         <div class="col-12">
                     <div class="prod-info -clr" style="background:#f9f9f9; color:#000">
                         <h5 style="padding: 10px;">
-                             SHIPMENT INFORMATION 
+                            <i> SHIPMENT INFORMATION </i> 
                             <hr>
                         </h5>
                         <ul>
@@ -155,7 +155,7 @@
                                 @elseif($tracking->status == 'ON_HOLD') <span class=" bg-warning p-1">ON HOLD  </span>
                                 @elseif($tracking->status == 'CANCELLED') <span class=" bg-danger p-1">CANCELLED  </span>@endif
                             </span> </li>
-                            <li> <span class="title-2">Origin:</span> <span class="fs-16">{{$tracking->courier->origin}}</span> </li>
+                            <li> <span class="title-2">Country of Origin:</span> <span class="fs-16">{{$tracking->courier->origin}}</span> </li>
                             <li> <span class="title-2">Destination:</span> <span class="fs-16">{{$tracking->courier->destination}}</span> </li>
                             <li> <span class="title-2">Departure Date:</span> <span class="fs-16">{{$tracking->courier->departure_date}}</span> </li>
                             <li> <span class="title-2">Carrier:</span> <span class="fs-16">{{$settings->site_name}}</span> </li>
