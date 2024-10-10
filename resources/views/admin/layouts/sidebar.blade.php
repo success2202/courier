@@ -17,6 +17,7 @@
          <ul> 
              <li><a href="{{route('admin.courier.create')}}">Create Courier Info </a></li>
              <li><a href="{{route('admin.courier.index')}}">Manage </a></li>
+             <li><a href="{{route('admin.courier.createReciept')}}">Create Reciept </a></li>
              
        </ul>
       </li>

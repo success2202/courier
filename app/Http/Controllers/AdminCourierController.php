@@ -16,6 +16,34 @@ class AdminCourierController extends Controller
 {
     //
 
+    public function GenerateReciept(Request $req)
+    {
+        try{
+        sleep(1);
+        $code = Tracking::where('const_no', $req->constNo)->first();
+        if($code)
+        {
+            $code->load('courier', 'trackHistory');
+        }
+        return view('admin.courier.reciept')
+        ->with('bheading', 'Reciept')
+        ->with('breadcrumb', 'Reciept')
+        ->with('tracking', $code);
+    }catch(\Exception $e)
+    {
+        Session::flash('alert', 'error');
+        Session::flash('message', 'Something  went wrong');
+        return back();
+    }
+    }
+
+    public function createCourierReciept()
+    {
+        return view('admin.courier.reciept')
+            ->with('bheading', 'Create Reciept')
+            ->with('breadcrumb', 'Create Reciept');
+    }
+
     public function createCourierInfo()
     {
         return view('admin.courier.create')
