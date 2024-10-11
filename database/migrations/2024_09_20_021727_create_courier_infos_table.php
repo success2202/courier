@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('amount')->nullable();
             $table->string('size')->nullable();
             $table->string('type')->nullable();
+            $table->string('payment')->nullable();
             $table->string('sender_name')->nullable();
             $table->string('sender_phone')->nullable();
             $table->string('sender_email')->nullable();

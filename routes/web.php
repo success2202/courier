@@ -83,6 +83,7 @@ Route::group(['prefix' => 'manage', 'as' => 'admin.'], function(){
     // Route::get('/courier/index', 'CourierIndex')->name('courier.index');
     Route::get('/courier/create', 'createCourierInfo')->name('courier.create');
     Route::get('/courier/createReciept', 'createCourierReciept')->name('courier.createReciept');
+    Route::post('/courier/reciept', 'GenerateReciept')->name('courier.reciept');
     // Route::get('/courier/delete/{id}', 'DeleteCourier')->name('courier.delete');
     Route::post('courier/store', 'CourierStore')->name('courier.store');
     Route::get('courier/edit/{id}', 'CourierEdit')->name('courier.edit');
@@ -94,7 +95,7 @@ Route::group(['prefix' => 'manage', 'as' => 'admin.'], function(){
     // Route::get('/courier/tracking/edit/{id}', 'TrackingEdit')->name('courier.tracking.edit');
     Route::post('/courier/tracking/update/{id}', 'UpdateTracking')->name('tracking.update');
 
-    Route::post('/courier/reciept', 'GenerateReciept')->name('courier.reciept');
+    
 
     });
 });

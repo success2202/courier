@@ -36,6 +36,7 @@
                                                 <th>Images</th>
                                                  <th>weight</th>
                                                  <th>amount</th>
+                                                 <th>Fee</th>
                                                  <th>size</th>
                                                   <th>type</th>
                                                   <th>invoice_id</th>
@@ -84,6 +85,10 @@
                                                 <td>
                                                     ${{$sp->amount}}
                                                 </td>  
+
+                                                <td>
+                                                    {{$sp->payment}}
+                                                </td>
 
                                                 <td>
                                                     {{$sp->size}}

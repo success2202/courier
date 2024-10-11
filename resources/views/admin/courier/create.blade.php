@@ -249,6 +249,19 @@
                                          </div>
                                             
                             </div> 
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select name="payment" class="form-control">
+                                            <option value="Paid" {{ old('payment') == 'Paid' ? 'selected' : '' }}> Paid</option>
+                                            <option value="Unpaid" {{ old('payment') == 'Unpaid' ? 'selected' : '' }}>Not Paid</option>
+                                            
+                                        </select>
+                                        <small id="emailHelp" class="form-text text-muted">Fee Payment  </small>
+                                      
+                                    </div>
+                                </div>
                         </div>
                          
                     </div>

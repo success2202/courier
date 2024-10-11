@@ -82,6 +82,7 @@ class AdminCourierController extends Controller
             'images' => json_encode($images),
             'weight'  => $req->weight,
             'amount' => $req->amount,
+            'payment' => $req->payment,
             'size' => $req->size,
             'type' => $req->type,
             'invoice_id' => rand(1111111111, 999999999),
@@ -267,6 +268,7 @@ class AdminCourierController extends Controller
             $courier->images = isset($images)?json_encode($images):$courier->images;
             $courier->weight  = $req->weight;
             $courier->amount = $req->amount;
+            $courier->payment = $req->payment;
             $courier->size = $req->size;
             $courier->type = $req->type;
             $courier->sender_name = $req->sender_name;
