@@ -66,8 +66,8 @@
     margin: 20px 0;
 }
 
-.content h2 {
-    margin-bottom: 10px;
+.content h4 {
+    margin-bottom: 12px;
     text-align: center;
 }
 
@@ -145,7 +145,7 @@
        
     
         <div class="form-container">
-            <h2 style="text-align: center;">Enter tracking no</h2>
+            {{-- <h2 style="text-align: center;">Enter tracking no</h2> --}}
             <form action="{{route('admin.courier.reciept')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <!-- Text Input --><center>
@@ -173,7 +173,7 @@
                 </div>
             
                 <div class="content">
-                    <h2>Delivery Receipt</h2>
+                    <h4>.......Receipt.........</h4> <hr>
             
                     <!-- Sender and Receiver Information -->
                     <div class="details">
