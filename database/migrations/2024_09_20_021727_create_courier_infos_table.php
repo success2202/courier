@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('images')->nullable();
             $table->string('weight')->nullable();
             $table->string('amount')->nullable();
+            $table->string('payment')->nullable();
             $table->string('size')->nullable();
             $table->string('type')->nullable();
             $table->string('payment')->nullable();
