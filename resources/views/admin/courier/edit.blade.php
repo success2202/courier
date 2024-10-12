@@ -264,8 +264,8 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <select name="payment" class="form-control">
-                                            <option value="{{$courier->payment}}" {{ old('payment') == 'Paid' ? 'selected' : '' }}> Paid</option>
-                                            <option value="{{$courier->payment}}" {{ old('payment') == 'Unpaid' ? 'selected' : '' }}>Not Paid</option>
+                                            <option value="{{$courier->payment}}" {{ old('payment') == 'PAID' ? 'selected' : '' }}> Paid</option>
+                                            <option value="{{$courier->payment}}" {{ old('payment') == 'UNPAID' ? 'selected' : '' }}>Not Paid</option>
                                             
                                         </select>
                                         <small id="emailHelp" class="form-text text-muted">Fee Payment  </small>
