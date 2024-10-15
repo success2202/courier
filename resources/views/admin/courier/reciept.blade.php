@@ -148,7 +148,8 @@
             {{-- <h2 style="text-align: center;">Enter tracking no</h2> --}}
             <form action="{{route('admin.courier.reciept')}}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <!-- Text Input --><center>
+                <!-- Text Input -->
+                <center>
                 <div class="form-group">
                     <input type="text" id="name" name="constNo" class="form-control box-shadow" placeholder="Enter your Product ID" required>
                 </div>
@@ -165,7 +166,7 @@
             @if(isset($tracking))
 
 
-            <div class="receipt" id="printableArea">>
+            <div class="receipt" id="printableArea">
                 <div class="header">
                     <a href=""><img style="width: 50px; heigth: 30px;" src="{{asset('/assets/logo.png')}}" alt=""></a>
                
